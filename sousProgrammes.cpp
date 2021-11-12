@@ -35,9 +35,24 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 }
 
 
-void placerBateau(int tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau){
-    //VARIABLES
+void placerBateau(int tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau)
+{
+    // VARIABLES
     coordonnee coordBateau;
-    
+    bool erreur = false;
+
+    while(erreur == true)
+    {
+        // INITIALISATION
+        // Déterminer la coordonnée de base du bateau
+
+        // Mettre erreur a true
+
+        // Determiner dans quel sens sera le bateau
+
+
+        // PLACEMENT DU BATEAU
+        
+    }    
 }
 
