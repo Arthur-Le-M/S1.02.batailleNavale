@@ -80,13 +80,15 @@ int main (void)
             cin >> coordTir.coordY;
 
             // Verification de la position en X
-            if (coordTir.coordX != A && coordTir.coordX != B && coordTir.coordX != C && coordTir.coordX != D && coordTir.coordX != E && 
-                coordTir.coordX != F && coordTir.coordX != G && coordTir.coordX != H && coordTir.coordX != I)
+            if (coordTir.coordX != 'A' && coordTir.coordX != 'B' && coordTir.coordX != 'C' && coordTir.coordX != 'D' && coordTir.coordX != 'E' && 
+                coordTir.coordX != 'F' && coordTir.coordX != 'G' && coordTir.coordX != 'H' && coordTir.coordX != 'I')
             {
                 afficherTexteEnCouleur("Erreur en 'X' !",rouge,true);
                 erreurSaisie = true;
             }
             
+            //passage de char à int pour coord Y
+
             // Verification de la position en Y
             if (coordTir.coordY < 1 || coordTir.coordY > 9)
             {
