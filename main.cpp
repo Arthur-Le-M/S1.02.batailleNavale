@@ -30,12 +30,12 @@ int main (void)
     };
     
     // Compteurs
-    unsigned short int nbTouches;
-    unsigned short int nbTirs;
+    unsigned short int nbTouches; // Nombre de tirs qui ont touché le bateau
+    unsigned short int nbTirs; // Nombre de tirs effectués depuis le début de la partie
 
     // Coordonnées du bateau
-    const unsigned short int LONG_BATEAU = 4;
-    coordonnee coordBateau[LONG_BATEAU];
+    const unsigned short int LONG_BATEAU = 4; // La longueur du bateau
+    coordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
 
     // Concernant le tir
     bool estTouche; // Indique si le tir touche le navire
@@ -43,7 +43,7 @@ int main (void)
     int y; // Variable qui va nous permettre de convertir char en int
 
     // Indicateur de saisie
-    bool erreurSaisie;
+    bool erreurSaisie; // L'utilisateur à fait une erreur de saisie ou pas
 
     // TRAITEMENTS
     /********** INITIALISATION **********/ 
@@ -51,7 +51,7 @@ int main (void)
     afficherRegles();
 
     // Initialiser les coordonnées du bateau
-
+    
     // Initialiser les compteurs 
     nbTouches = 0;
     nbTirs = 0;

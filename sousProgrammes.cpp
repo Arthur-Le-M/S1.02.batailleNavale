@@ -35,3 +35,9 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 }
 
 
+void placerBateau(int tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau){
+    //VARIABLES
+    coordonnee coordBateau;
+    
+}
+

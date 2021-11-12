@@ -1,0 +1,443 @@
+<?xml version="1.1"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>placerBateau</nom>
+  <date_creation>12/11/2021 13:30</date_creation>
+  <Elements>
+    <Action>
+      <Position>711;80</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>tableau
+longueurBateau
+largeurPlateau
+longueurPlateau</PreAssertion>
+      <PostAssertion>tableau</PostAssertion>
+      <Titre>placerBateau</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Iteration>
+          <Position>867.5;159.5</Position>
+          <StyleLien>1</StyleLien>
+          <Titre>tant que erreur = vrai</Titre>
+          <IterationFixe>1</IterationFixe>
+          <Enfants>
+            <Action>
+              <Position>284;250</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>tableau
+largeurPlateau
+longueurPlateau</PreAssertion>
+              <PostAssertion>tableau</PostAssertion>
+              <Titre>Initialisation</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>77;350</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>Déterminer la coordonnées de base
+du bateau</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>16;468</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>largeurPlateau</PreAssertion>
+                      <PostAssertion>coordBateau</PostAssertion>
+                      <Titre>coordBateau.x ← random(0,largeurPlateau-1)</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>237;548</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>longueurPlateau</PreAssertion>
+                      <PostAssertion>coordBateau</PostAssertion>
+                      <Titre>coordBateau.y ← random(0,longueurPlateau-1)</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>491;475</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>tableau[0] ← coordBateau</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>709;390</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>sensBateau</PostAssertion>
+                  <Titre>Déterminer dans quel sens sera le bateau</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>733;557</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>sensBateau</PostAssertion>
+                      <Titre>sensBateau ← random(1,4)</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>380;353</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>erreur</PostAssertion>
+                  <Titre>erreur ← vrai</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+              </Enfants>
+            </Action>
+            <Iteration>
+              <Position>1441.5;302.5</Position>
+              <StyleLien>1</StyleLien>
+              <Titre>pour i allant de 1 à longueurBateau-1</Titre>
+              <IterationFixe>1</IterationFixe>
+              <Enfants>
+                <ConditionMultiple>
+                  <Position>1381;400</Position>
+                  <StyleLien>0</StyleLien>
+                  <Titre>sensBateau</Titre>
+                  <operationsLogiques>
+                    <operation>
+                      <Titre>1</Titre>
+                      <Enfants>
+                        <Condition>
+                          <Position>1078;568</Position>
+                          <StyleLien>0</StyleLien>
+                          <estUnique>0</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>talbleau[0].x + longueurBateau &lt; largeurTableau</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>766;652</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>table
+largeurPlateau
+longueurPlateau</PreAssertion>
+                                  <PostAssertion>table</PostAssertion>
+                                  <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>506;737</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>largeurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.x ← tableau[i-1].x+1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>733;792</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>longueurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.y ← tableau[i-1].y</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>972;735</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>coordBateau</PreAssertion>
+                                      <PostAssertion>tableau</PostAssertion>
+                                      <Titre>tableau[0] ← coordBateau</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1100;857</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>erreur</PreAssertion>
+                                      <PostAssertion>erreur</PostAssertion>
+                                      <Titre>erreur ← faux</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants>
+                                <Sortie>
+                                  <Position>1270;646</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </operation>
+                    <operation>
+                      <Titre>2</Titre>
+                      <Enfants>
+                        <Condition>
+                          <Position>1175;947</Position>
+                          <StyleLien>0</StyleLien>
+                          <estUnique>0</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>talbleau[0].y + longueurBateau &lt; longueurTableau</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>1024;1061</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>table
+largeurPlateau
+longueurPlateau</PreAssertion>
+                                  <PostAssertion>table</PostAssertion>
+                                  <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>764;1146</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>largeurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.x ← tableau[i-1].x</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>972;1291</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>longueurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.y ← tableau[i-1].y+1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1349;1148</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>coordBateau</PreAssertion>
+                                      <PostAssertion>tableau</PostAssertion>
+                                      <Titre>tableau[0] ← coordBateau</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1229;1230</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>erreur</PreAssertion>
+                                      <PostAssertion>erreur</PostAssertion>
+                                      <Titre>erreur ← faux</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants>
+                                <Sortie>
+                                  <Position>1361;1013</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </operation>
+                    <operation>
+                      <Titre>3</Titre>
+                      <Enfants>
+                        <Condition>
+                          <Position>1651;1243</Position>
+                          <StyleLien>0</StyleLien>
+                          <estUnique>0</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>talbleau[0].y + longueurBateau &lt; longueurTableau ET talbleau[0].x + longueurBateau &lt; longueurTableau</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>1462;1396</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>table
+largeurPlateau
+longueurPlateau</PreAssertion>
+                                  <PostAssertion>table</PostAssertion>
+                                  <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>1285;1520</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>largeurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.x ← tableau[i-1].x+1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1492;1587</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>longueurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.y ← tableau[i-1].y+1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1751;1518</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>coordBateau</PreAssertion>
+                                      <PostAssertion>tableau</PostAssertion>
+                                      <Titre>tableau[0] ← coordBateau</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>2150;1519</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>erreur</PreAssertion>
+                                      <PostAssertion>erreur</PostAssertion>
+                                      <Titre>erreur ← faux</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants>
+                                <Sortie>
+                                  <Position>1940;1406</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </operation>
+                    <operation>
+                      <Titre>4</Titre>
+                      <Enfants>
+                        <Condition>
+                          <Position>2075;779</Position>
+                          <StyleLien>0</StyleLien>
+                          <estUnique>0</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>talbleau[0].y + longueurBateau &lt; longueurTableau ET talbleau[0].x + longueurBateau &lt; longueurTableau</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>1885;892</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>table
+largeurPlateau
+longueurPlateau</PreAssertion>
+                                  <PostAssertion>table</PostAssertion>
+                                  <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>1708;1016</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>largeurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.x ← tableau[i-1].x-1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>1915;1083</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>longueurPlateau</PreAssertion>
+                                      <PostAssertion>coordBateau</PostAssertion>
+                                      <Titre>coordBateau.y ← tableau[i-1].y-1</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>2174;1014</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>coordBateau</PreAssertion>
+                                      <PostAssertion>tableau</PostAssertion>
+                                      <Titre>tableau[0] ← coordBateau</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Action>
+                                      <Position>2441;1209</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>erreur</PreAssertion>
+                                      <PostAssertion>erreur</PostAssertion>
+                                      <Titre>erreur ← faux</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants>
+                                <Sortie>
+                                  <Position>2491;902</Position>
+                                </Sortie>
+                              </Enfants>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </operation>
+                  </operationsLogiques>
+                </ConditionMultiple>
+              </Enfants>
+            </Iteration>
+          </Enfants>
+        </Iteration>
+      </Enfants>
+    </Action>
+  </Elements>
+</Algorithme>
