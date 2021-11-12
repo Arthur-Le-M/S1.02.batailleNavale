@@ -40,6 +40,7 @@ int main (void)
     // Concernant le tir
     bool estTouche; // Indique si le tir touche le navire
     coordonnee coordTir; // Représente les coordonnées du tir saisies par le joueur
+    int y; // Variable qui va nous permettre de convertir char en int
 
     // Indicateur de saisie
     bool erreurSaisie;
@@ -87,10 +88,11 @@ int main (void)
                 erreurSaisie = true;
             }
             
-            //passage de char à int pour coord Y
+            // Passage de char à int pour coord Y
+            y = int (coordTir.coordY);
 
             // Verification de la position en Y
-            if (coordTir.coordY < 1 || coordTir.coordY > 9)
+            if (y < 1 || y > 9)
             {
                 afficherTexteEnCouleur("Erreur en 'Y' !",rouge,true);
                 erreurSaisie = true;
