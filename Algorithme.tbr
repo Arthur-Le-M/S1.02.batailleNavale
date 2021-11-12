@@ -2,10 +2,10 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>10/11/2021 22:20</date_creation>
+  <date_creation>10/11/2021 16:53</date_creation>
   <Elements>
     <Action>
-      <Position>1271;5</Position>
+      <Position>705;11</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>?</PreAssertion>
       <PostAssertion>?</PostAssertion>
@@ -99,7 +99,7 @@ bateau</Titre>
               </Enfants>
             </Action>
             <Action>
-              <Position>648;213</Position>
+              <Position>652;211</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>nbTouche
@@ -294,7 +294,7 @@ du tir</Titre>
                               <Titre>coordTir.y = 1 ou 2 ou 3 ou 4 ou 5 ou 6 ou 7 ou 8 ou 9</Titre>
                               <Enfants>
                                 <Sortie>
-                                  <Position>1898;923</Position>
+                                  <Position>1899;923</Position>
                                 </Sortie>
                               </Enfants>
                             </operation>
@@ -451,7 +451,7 @@ d'arrêt</Titre>
                           <Titre>nbTouche >= coordBateau.size</Titre>
                           <Enfants>
                             <Sortie>
-                              <Position>919;552</Position>
+                              <Position>945;536</Position>
                             </Sortie>
                           </Enfants>
                         </operation>

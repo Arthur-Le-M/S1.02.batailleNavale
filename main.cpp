@@ -1,33 +1,123 @@
 /*
-Nom du programme : Bataille Navale
-But du programme : faire jouer une bataille navale
-Auteur du programme : Arthur Le Menn / Matis Chabanat
-Date de dernière modification : 10/11/2021
+ Programme : Bataille Navale
+ But :  Realiser une partie du jeu de société "Bataille Navale"
+ Date de dernière modification : 
+ Auteur : Chabanat Matis, Le Menn Arthur | TD1 - TP1
+ Remarques : 
 */
 
-#include<iostream>
+#include <iostream>
+#include "sousProgrammes.h"
+#include "game-tools.h"
 using namespace std;
 
-int main(void){
-    //VARIABLES
-    unsigned int const NB_COLONNES = 9; // Nombre de colonnes du plateau
-    unsigned int const NB_LIGNES = 9; // Nombre de lignes du platea
-    char plateau[NB_LIGNES][NB_COLONNES]{' ',' ',' ',' ',' ',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ',' ',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ',' ',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ','o',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ','.',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ',' ',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ',' ',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ',' ',' ',' ',' ',' ',
-                                        ' ',' ',' ',' ',' ',' ',' ',' ',' '};
+int main (void)
+{
+    // VARIABLES
+    // Créer la grille/le plateau de jeu
+    const unsigned short int NB_LIGNES = 9;
+    const unsigned short int NB_COLONNES = 9;
+    char plateau[NB_LIGNES][NB_COLONNES] = {
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' ',
+            ' ',' ',' ',' ',' ',' ',' ',' ',' '
+    };
     
-    cout << "  A B C D E F G H I" << endl;
-    for(int i =0; i < NB_LIGNES; i++){
-        cout << i+1 << " ";
-        for(int y =0; y < NB_COLONNES; y++){
-            cout << plateau[i][y] << " ";
+    // Compteurs
+    unsigned short int nbTouches;
+    unsigned short int nbTirs;
+
+    // Coordonnées du bateau
+    const unsigned short int LONG_BATEAU = 4;
+    coordonnee coordBateau[LONG_BATEAU];
+
+    // Concernant le tir
+    bool estTouche; // Indique si le tir touche le navire
+    coordonnee coordTir; // Représente les coordonnées du tir saisies par le joueur
+
+    // Indicateur de saisie
+    bool erreurSaisie;
+
+    // TRAITEMENTS
+    /********** INITIALISATION **********/ 
+    // Affichage de l'entête
+    afficherRegles();
+
+    // Initialiser les coordonnées du bateau
+
+    // Initialiser les compteurs 
+    nbTouches = 0;
+    nbTirs = 0;
+
+
+    /********** JOUER LA PARTIE **********/
+    while (!(nbTouches >= LONG_BATEAU)) 
+    {
+        // Initialisation de la manche
+        estTouche = false;
+
+        // Effacer l'écran
+        effacer();
+
+        // Afficher la nouvelle grille
+
+
+        // Saisie verif des coordonnées
+        do
+        {
+            // Avant la saisie on considère qu'il n'y a pas d'erreur
+            erreurSaisie = false;
+
+            // Saisie
+            cout << "Votre " << nbTirs << "eme tir (ex. A3) ou abandonner (@@) : ";
+            cin >> coordTir.coordX;
+            cin >> coordTir.coordY;
+
+            // Verification de la position en X
+            if (coordTir.coordX != A && coordTir.coordX != B && coordTir.coordX != C && coordTir.coordX != D && coordTir.coordX != E && 
+                coordTir.coordX != F && coordTir.coordX != G && coordTir.coordX != H && coordTir.coordX != I)
+            {
+                afficherTexteEnCouleur("Erreur en 'X' !",rouge,true);
+                erreurSaisie = true;
+            }
+            
+            // Verification de la position en Y
+            if (coordTir.coordY < 1 || coordTir.coordY > 9)
+            {
+                afficherTexteEnCouleur("Erreur en 'Y' !",rouge,true);
+                erreurSaisie = true;
+            }
         }
-        cout << endl;
+        while (erreurSaisie == true);
+        
+    
+        // Determiner si le tir touche le bateau ou non
+
+
+        // Marquer la grille
+
     }
+
+
+
+    /********** FIN DE LA PARTIE **********/
+    // Afficher les coordonnées du bateau
+
+
+    // Afficher la grille
+    afficherGrille(plateau,NB_LIGNES,NB_COLONNES);
+
+    // Afficher le nombre de tirs effectués pour couler le bateau
+    cout << "Il a fallu " << nbTirs << " tirs pour detruire le bateau ennemi !" << endl;
+
+
+
+
+    return 0;
 }
