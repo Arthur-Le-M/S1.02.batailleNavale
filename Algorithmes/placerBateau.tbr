@@ -2,14 +2,14 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>placerBateau</nom>
-  <date_creation>12/11/2021 13:43</date_creation>
+  <date_creation>15/11/2021 13:02</date_creation>
   <Elements>
     <Action>
       <Position>711;80</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>tableau&#xd;
-longueurBateau&#xd;
-largeurPlateau&#xd;
+      <PreAssertion>tableau&#xd;&#xd;
+longueurBateau&#xd;&#xd;
+largeurPlateau&#xd;&#xd;
 longueurPlateau</PreAssertion>
       <PostAssertion>tableau</PostAssertion>
       <Titre>placerBateau</Titre>
@@ -25,8 +25,8 @@ longueurPlateau</PreAssertion>
             <Action>
               <Position>284;250</Position>
               <StyleLien>2</StyleLien>
-              <PreAssertion>tableau&#xd;
-largeurPlateau&#xd;
+              <PreAssertion>tableau&#xd;&#xd;
+largeurPlateau&#xd;&#xd;
 longueurPlateau</PreAssertion>
               <PostAssertion>tableau</PostAssertion>
               <Titre>Initialisation</Titre>
@@ -38,7 +38,7 @@ longueurPlateau</PreAssertion>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Déterminer la coordonnée de base
+                  <Titre>Déterminer la coordonnée de base&#xd;
 du bateau</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -142,8 +142,8 @@ du bateau</Titre>
                                     <Action>
                                       <Position>766;652</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;
-largeurPlateau&#xd;
+                                      <PreAssertion>table&#xd;&#xd;
+largeurPlateau&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>table</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -175,7 +175,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>coordBateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[0] ← coordBateau</Titre>
+                                          <Titre>tableau[i] ← coordBateau</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -220,8 +220,8 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>1024;1061</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;
-largeurPlateau&#xd;
+                                      <PreAssertion>table&#xd;&#xd;
+largeurPlateau&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>table</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -249,11 +249,11 @@ longueurPlateau</PreAssertion>
                                           <Enfants/>
                                         </Action>
                                         <Action>
-                                          <Position>1349;1148</Position>
+                                          <Position>1350;1148</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>coordBateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[0] ← coordBateau</Titre>
+                                          <Titre>tableau[i] ← coordBateau</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -298,8 +298,8 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>1462;1396</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;
-largeurPlateau&#xd;
+                                      <PreAssertion>table&#xd;&#xd;
+largeurPlateau&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>table</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -331,7 +331,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>coordBateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[0] ← coordBateau</Titre>
+                                          <Titre>tableau[i] ← coordBateau</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -376,8 +376,8 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>1885;892</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;
-largeurPlateau&#xd;
+                                      <PreAssertion>table&#xd;&#xd;
+largeurPlateau&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>table</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -409,7 +409,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>coordBateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[0] ← coordBateau</Titre>
+                                          <Titre>tableau[i] ← coordBateau</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>

@@ -11,7 +11,7 @@
 #include "game-tools.h"
 using namespace std;
 
-int main (void)
+int main1 (void)
 {
     // VARIABLES
     // Créer la grille/le plateau de jeu
@@ -124,4 +124,18 @@ int main (void)
 
 
     return 0;
+}
+
+int main(void){
+    int const longueurBateau = 4;
+    coordonnee tableau[longueurBateau];
+
+
+    placerBateau(tableau, longueurBateau, 9, 9);
+
+    for(int i=0; i<longueurBateau; i++){
+        cout << tableau[i].coordX << tableau[i].coordY << endl;
+    }
+
+
 }

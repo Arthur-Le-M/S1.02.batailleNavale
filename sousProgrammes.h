@@ -22,7 +22,7 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 // BUT : Afficher la grille du jeu avec la bataille navale
 
 
-void placerBateau(int tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau);
+void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau);
 // BUT : Déterminer les coordonnées du bateau sur un plateau de largeurPlateau par hauteurPlateau
 
 
