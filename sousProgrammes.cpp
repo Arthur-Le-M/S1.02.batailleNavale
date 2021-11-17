@@ -44,31 +44,28 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
 
     while(erreur == true)
     {
-        cout << "Début de la boucle" << endl;
         // INITIALISATION
         // Déterminer la coordonnée de base du bateau
-        coordBateau.coordX = random(0, largeurPlateau-1);
-        cout << "Minimum = " << 0 << " Maximum = " << largeurPlateau-1 << " Random(min, max) = " << random(0, largeurPlateau-1) << endl;
-        coordBateau.coordY = random(0, largeurPlateau-1);
-        tableau[0] = coordBateau;
-        cout << "Coordonnées de base : " << tableau[0].coordX << tableau[0].coordY << endl;
+        tableau[0].coordX = random(0, largeurPlateau-1);
+        tableau[0].coordY = random(0, largeurPlateau-1);
         // Mettre erreur a true
         erreur=true;
         // Determiner dans quel sens sera le bateau
         sensBateau = random(1,4);
-        cout << "Coordonnées de base : " << tableau[0].coordX << tableau[0].coordY << endl;
+
+        for(int i=0; i < longueurBateau; i++){
+        cout << "X :"<<tableau[i].coordX << " Y : "<< tableau[i].coordY << " sens du bateau : " << sensBateau <<endl;
+    }
 
         // PLACEMENT DU BATEAU
         for(unsigned int i=0; i < longueurBateau; i++){
-            cout << "Début de la boucle" << endl;
             switch (sensBateau)
             {
             case 1:
                 if(tableau[0].coordX + longueurBateau < largeurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
-                    coordBateau.coordX = tableau[i-1].coordX+1;
-                    coordBateau.coordY = tableau[i-1].coordY;
-                    tableau[i] = coordBateau;
+                    tableau[i].coordX = tableau[i-1].coordX+1;
+                    tableau[i].coordY = tableau[i-1].coordY;
                     erreur = false;
                 }
                 else{
@@ -78,9 +75,8 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
             case 2:
                 if(tableau[0].coordY + longueurBateau < largeurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
-                    coordBateau.coordX = tableau[i-1].coordX;
-                    coordBateau.coordY = tableau[i-1].coordY+1;
-                    tableau[i] = coordBateau;
+                    tableau[i].coordX = tableau[i-1].coordX;
+                    tableau[i].coordY = tableau[i-1].coordY+1;
                     erreur = false;
                 }
                 else{
@@ -90,9 +86,8 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
             case 3:
                 if(tableau[0].coordY + longueurBateau < largeurPlateau && tableau[0].coordY + longueurBateau < largeurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
-                    coordBateau.coordX = tableau[i-1].coordX+1;
-                    coordBateau.coordY = tableau[i-1].coordY+1;
-                    tableau[i] = coordBateau;
+                    tableau[i].coordX = tableau[i-1].coordX+1;
+                    tableau[i].coordY = tableau[i-1].coordY+1;
                     erreur = false;
                 }
                 else{
@@ -102,9 +97,8 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
             case 4:
                 if(tableau[0].coordY - longueurBateau > largeurPlateau && tableau[0].coordY - longueurBateau > largeurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
-                    coordBateau.coordX = tableau[i-1].coordX-1;
-                    coordBateau.coordY = tableau[i-1].coordY-1;
-                    tableau[i] = coordBateau;
+                    tableau[i].coordX = tableau[i-1].coordX-1;
+                    tableau[i].coordY = tableau[i-1].coordY-1;
                     erreur = false;
                 }
                 else{
@@ -114,7 +108,11 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
             default:
                 break;
             }
-            }
+        }
+    }
+
+    for(int i=0; i < longueurBateau; i++){
+        cout << tableau[i].coordX << tableau[i].coordY; 
     }
 }    
 

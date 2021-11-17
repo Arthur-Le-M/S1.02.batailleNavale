@@ -9,8 +9,8 @@ using namespace std;
 // Creation de l'enregistrement coordBateau qui représente les coordonnées du bateau
 struct coordonnee 
 {
-    char coordX;
-    char coordY;
+    int coordX;
+    int coordY;
 };
 
 
