@@ -7,10 +7,15 @@ using namespace std;
 
 
 // Creation de l'enregistrement coordBateau qui représente les coordonnées du bateau
-struct coordonnee 
+struct IndiceCoordonnee 
 {
     int coordX;
     int coordY;
+};
+
+struct Coordonnee{
+    char coordX;
+    char coordY;
 };
 
 
@@ -22,7 +27,7 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 // BUT : Afficher la grille du jeu avec la bataille navale
 
 
-void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau);
+void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau);
 // BUT : Déterminer les coordonnées du bateau sur un plateau de largeurPlateau par hauteurPlateau
 
 

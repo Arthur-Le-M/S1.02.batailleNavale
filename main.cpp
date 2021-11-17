@@ -35,11 +35,11 @@ int main1 (void)
 
     // Coordonnées du bateau
     const unsigned short int LONG_BATEAU = 4; // La longueur du bateau
-    coordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
+    Coordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
 
     // Concernant le tir
     bool estTouche; // Indique si le tir touche le navire
-    coordonnee coordTir; // Représente les coordonnées du tir saisies par le joueur
+    Coordonnee coordTir; // Représente les coordonnées du tir saisies par le joueur
     int y; // Variable qui va nous permettre de convertir char en int
 
     // Indicateur de saisie
@@ -128,14 +128,12 @@ int main1 (void)
 
 int main(void){
     int const longueurBateau = 4;
-    coordonnee tableau[longueurBateau];
+    IndiceCoordonnee tableau[longueurBateau];
 
 
-    placerBateau(tableau, longueurBateau, 9, 9);
+    placerBateau(tableau, longueurBateau,9,9);
 
-    for(int i=0; i<longueurBateau; i++){
-        cout << tableau[i].coordX << tableau[i].coordY << endl;
+    for(int i=0; i < longueurBateau; i++){
+    cout << "X :"<<tableau[i].coordX << " Y : "<< tableau[i].coordY <<endl;
     }
-
-
 }

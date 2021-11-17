@@ -35,10 +35,10 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 }
 
 
-void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau)
+void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau)
 {
     // VARIABLES
-    coordonnee coordBateau;
+    IndiceCoordonnee coordBateau;
     bool erreur = true; // condition d'arrêt
     unsigned short int sensBateau; // Sens dans lequel sera le bateau (compris entre 1 et 4)
 
@@ -47,18 +47,14 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
         // INITIALISATION
         // Déterminer la coordonnée de base du bateau
         tableau[0].coordX = random(0, largeurPlateau-1);
-        tableau[0].coordY = random(0, largeurPlateau-1);
+        tableau[0].coordY = random(0, hauteurPlateau-1);
         // Mettre erreur a true
         erreur=true;
         // Determiner dans quel sens sera le bateau
         sensBateau = random(1,4);
 
-        for(int i=0; i < longueurBateau; i++){
-        cout << "X :"<<tableau[i].coordX << " Y : "<< tableau[i].coordY << " sens du bateau : " << sensBateau <<endl;
-    }
-
         // PLACEMENT DU BATEAU
-        for(unsigned int i=0; i < longueurBateau; i++){
+        for(unsigned int i=1; i < longueurBateau; i++){
             switch (sensBateau)
             {
             case 1:
@@ -73,7 +69,7 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
                 }
                 break;
             case 2:
-                if(tableau[0].coordY + longueurBateau < largeurPlateau){
+                if(tableau[0].coordY + longueurBateau < hauteurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i-1].coordX;
                     tableau[i].coordY = tableau[i-1].coordY+1;
@@ -84,7 +80,7 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
                 }
                 break;
             case 3:
-                if(tableau[0].coordY + longueurBateau < largeurPlateau && tableau[0].coordY + longueurBateau < largeurPlateau){
+                if(tableau[0].coordX + longueurBateau < largeurPlateau && tableau[0].coordY + longueurBateau < hauteurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i-1].coordX+1;
                     tableau[i].coordY = tableau[i-1].coordY+1;
@@ -95,7 +91,7 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
                 }
                 break;
             case 4:
-                if(tableau[0].coordY - longueurBateau > largeurPlateau && tableau[0].coordY - longueurBateau > largeurPlateau){
+                if(tableau[0].coordX - longueurBateau > largeurPlateau && tableau[0].coordY - longueurBateau > hauteurPlateau){
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i-1].coordX-1;
                     tableau[i].coordY = tableau[i-1].coordY-1;
@@ -105,14 +101,8 @@ void placerBateau(coordonnee tableau[], unsigned short int longueurBateau, unsig
                     i = longueurBateau;
                 }
                 break;
-            default:
-                break;
             }
         }
-    }
-
-    for(int i=0; i < longueurBateau; i++){
-        cout << tableau[i].coordX << tableau[i].coordY; 
     }
 }    
 
