@@ -106,4 +106,5 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
     }
 }    
 
+    
 
