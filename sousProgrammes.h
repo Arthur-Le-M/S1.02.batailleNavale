@@ -30,5 +30,12 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau);
 // BUT : Déterminer les coordonnées du bateau sur un plateau de largeurPlateau par hauteurPlateau
 
+Coordonnee indiceVersCoordonnee(IndiceCoordonnee indice);
+// BUT : transformer une variable de type indiceCoordonnee en une variable de type Coordonnee
+
+IndiceCoordonnee coordonneeVersIndice(Coordonnee coordonnee);
+// BUT : transformer une variable de type Coordonnee en une variable de type indiceCoordonnee
+
+
 
 #endif

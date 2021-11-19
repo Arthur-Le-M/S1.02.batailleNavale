@@ -106,5 +106,25 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
     }
 }    
 
-    
+Coordonnee indiceVersCoordonnee(IndiceCoordonnee indice){
+    //VARIABLES
+    Coordonnee coordonneeFinal; //Les coordonnées qui vont être retourné par le programme
+
+    //TRAITEMENT
+    coordonneeFinal.coordX = char(indice.coordX+65);
+    coordonneeFinal.coordY = char(indice.coordY+49);
+
+    return coordonneeFinal;
+}
+
+IndiceCoordonnee coordonneeVersIndice(Coordonnee coordonnee){
+    //VARIABLES
+    IndiceCoordonnee indiceFinal; //Les indices qui vont être retourné par le programme
+
+    //TRAITEMENT
+    indiceFinal.coordX = int(coordonnee.coordX)-65;
+    indiceFinal.coordY = int(coordonnee.coordY)-48;
+
+    return indiceFinal;
+}
 

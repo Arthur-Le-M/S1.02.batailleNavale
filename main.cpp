@@ -129,11 +129,12 @@ int main1 (void)
 int main(void){
     int const longueurBateau = 4;
     IndiceCoordonnee tableau[longueurBateau];
-
+    Coordonnee nouveauTab[longueurBateau];
 
     placerBateau(tableau, longueurBateau,9,9);
 
     for(int i=0; i < longueurBateau; i++){
-    cout << "X :"<<tableau[i].coordX << " Y : "<< tableau[i].coordY <<endl;
+        nouveauTab[i] = indiceVersCoordonnee(tableau[i]);
+        cout << "X :"<<nouveauTab[i].coordX << " Y : "<< nouveauTab[i].coordY <<endl;
     }
 }

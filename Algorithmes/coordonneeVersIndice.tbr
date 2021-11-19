@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>18/11/2021 09:27</date_creation>
+  <date_creation>19/11/2021 10:06</date_creation>
   <Elements>
     <Action>
       <Position>606;117</Position>
@@ -42,7 +42,7 @@ coordonneeX</PreAssertion>
               <PreAssertion>indiceFinal
 coordonneeY</PreAssertion>
               <PostAssertion>indiceY</PostAssertion>
-              <Titre>indicee.coordY ← indice(indiceY)-49</Titre>
+              <Titre>indicee.coordY ← int(indiceY)-49</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants/>
