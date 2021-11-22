@@ -6,7 +6,7 @@
  Remarques : 
 */
 
-#include <iostream>
+#include<iostream>
 #include "sousProgrammes.h"
 #include "game-tools.h"
 using namespace std;
@@ -35,7 +35,7 @@ int main1 (void)
 
     // Coordonnées du bateau
     const unsigned short int LONG_BATEAU = 4; // La longueur du bateau
-    Coordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
+    IndiceCoordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
 
     // Concernant le tir
     bool estTouche; // Indique si le tir touche le navire
@@ -51,14 +51,15 @@ int main1 (void)
     afficherRegles();
 
     // Initialiser les coordonnées du bateau
-    
+    placerBateau(coordBateau, LONG_BATEAU, NB_COLONNES, NB_LIGNES);
+
     // Initialiser les compteurs 
     nbTouches = 0;
     nbTirs = 0;
 
 
     /********** JOUER LA PARTIE **********/
-    while (!(nbTouches >= LONG_BATEAU)) 
+    while (nbTouches < LONG_BATEAU) 
     {
         // Initialisation de la manche
         estTouche = false;
@@ -67,7 +68,7 @@ int main1 (void)
         effacer();
 
         // Afficher la nouvelle grille
-
+        afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
 
         // Saisie verif des coordonnées
         do
@@ -102,10 +103,15 @@ int main1 (void)
         
     
         // Determiner si le tir touche le bateau ou non
-
+        for(int i=0; i<LONG_BATEAU; i++){
+            if(coordonneeVersIndice(coordTir) == coordBateau[i]){
+            cout << "Touché !";
+            estTouche = true;
+            }
+        }
+        
 
         // Marquer la grille
-
     }
 
 
