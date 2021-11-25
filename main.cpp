@@ -11,9 +11,9 @@
 #include "game-tools.h"
 using namespace std;
 
-int main1(void)
+int main2(void)
 {
-    // VARIABLES
+    /************************************* VARIABLES *************************************/
     // Créer la grille/le plateau de jeu
     const unsigned short int NB_LIGNES = 9;
     const unsigned short int NB_COLONNES = 9;
@@ -44,7 +44,7 @@ int main1(void)
     // Indicateur de saisie
     bool erreurSaisie; // L'utilisateur à fait une erreur de saisie ou pas
 
-    // TRAITEMENTS
+    /************************************* TRATEMENTS *************************************/
     /********** INITIALISATION **********/
     // Affichage de l'entête
     afficherRegles();
@@ -131,9 +131,7 @@ int main(void)
 
     placerBateau(tableau, longueurBateau, 9, 9);
 
-    for (int i = 0; i < longueurBateau; i++)
-    {
-        nouveauTab[i] = indiceVersCoordonnee(tableau[i]);
-        cout << "X :" << nouveauTab[i].coordX << " Y : " << nouveauTab[i].coordY << endl;
-    }
+    afficherCoordBateau(tableau, longueurBateau);
+
+    return 0;
 }

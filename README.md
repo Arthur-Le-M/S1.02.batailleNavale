@@ -6,7 +6,7 @@ Dans le cadre d'un projet en Algorithmique et programmation, par équipes de deu
 
 Nous nous sommes servis d'une bibliothèque de mise en forme lors de l'execution du programme.
 Cette bibliothèque, nommée Game-Tools a été créée par notre professeur d'Algorithmique et de programmation, 
-Mr Patrick ETCHEVERRY alias [@patrick-etcheverry](https://github.com/patrick-etcheverry).
+M. Patrick ETCHEVERRY alias [@patrick-etcheverry](https://github.com/patrick-etcheverry).
 
 ## Contenu 
 

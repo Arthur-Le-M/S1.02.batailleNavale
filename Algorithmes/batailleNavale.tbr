@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>10/11/2021 16:53</date_creation>
+  <date_creation>25/11/2021 11:11</date_creation>
   <Elements>
     <Action>
       <Position>705;11</Position>
@@ -36,7 +36,7 @@
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Afficher le titre
+                  <Titre>Afficher le titre&#xd;
 du jeu</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -69,7 +69,7 @@ du jeu</Titre>
               <StyleLien>2</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>coordBateau</PostAssertion>
-              <Titre>Initialiser coordonnées
+              <Titre>Initialiser coordonnées&#xd;
 bateau</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>0</DetailsVideVisible>
@@ -79,7 +79,7 @@ bateau</Titre>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>coordBateau</PostAssertion>
-                  <Titre>Déterminer coordonnées
+                  <Titre>Déterminer coordonnées&#xd;
 bateau</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -90,7 +90,7 @@ bateau</Titre>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>coordBateau</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Afficher coordonnées
+                  <Titre>Afficher coordonnées&#xd;
 bateau</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -102,7 +102,7 @@ bateau</Titre>
               <Position>652;211</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>?</PreAssertion>
-              <PostAssertion>nbTouche
+              <PostAssertion>nbTouche&#xd;
 nbTirs</PostAssertion>
               <Titre>Initaliser les compteurs</Titre>
               <DetailsVisible>1</DetailsVisible>
@@ -150,8 +150,8 @@ nbTirs</PostAssertion>
                 <Action>
                   <Position>1275;683</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>grille
-coordBateau
+                  <PreAssertion>grille&#xd;
+coordBateau&#xd;
 nbTirs</PreAssertion>
                   <PostAssertion>?</PostAssertion>
                   <Titre>Affichage</Titre>
@@ -173,7 +173,7 @@ nbTirs</PreAssertion>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>coordBateau</PreAssertion>
                       <PostAssertion>?</PostAssertion>
-                      <Titre>Afficher les coordonnées
+                      <Titre>Afficher les coordonnées&#xd;
 bateau (pour correction)</Titre>
                       <DetailsVisible>1</DetailsVisible>
                       <DetailsVideVisible>1</DetailsVideVisible>
@@ -216,7 +216,7 @@ bateau (pour correction)</Titre>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>coordTir</PostAssertion>
-                  <Titre>Saisie des coordonnées
+                  <Titre>Saisie des coordonnées&#xd;
 du tir</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -322,13 +322,13 @@ du tir</Titre>
                 <Action>
                   <Position>1891;350</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>coordBateau
-coordTir
-estTouche
+                  <PreAssertion>coordBateau&#xd;
+coordTir&#xd;
+estTouche&#xd;
 nbTouche</PreAssertion>
-                  <PostAssertion>estTouche
+                  <PostAssertion>estTouche&#xd;
 nbTouche</PostAssertion>
-                  <Titre>Déterminer si le tir
+                  <Titre>Déterminer si le tir&#xd;
 touche ou non</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
@@ -382,8 +382,8 @@ touche ou non</Titre>
                 <Action>
                   <Position>2134;753</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>coordTir
-estTouche
+                  <PreAssertion>coordTir&#xd;
+estTouche&#xd;
 grille</PreAssertion>
                   <PostAssertion>grille</PostAssertion>
                   <Titre>Marquer la grille</Titre>
@@ -401,7 +401,7 @@ grille</PreAssertion>
                             <Action>
                               <Position>2002;1001</Position>
                               <StyleLien>1</StyleLien>
-                              <PreAssertion>coordTir
+                              <PreAssertion>coordTir&#xd;
 grille</PreAssertion>
                               <PostAssertion>grille</PostAssertion>
                               <Titre>grille[coordTir.x][coordTir.y] = 'o'</Titre>
@@ -417,7 +417,7 @@ grille</PreAssertion>
                             <Action>
                               <Position>2394;1021</Position>
                               <StyleLien>1</StyleLien>
-                              <PreAssertion>coordTir
+                              <PreAssertion>coordTir&#xd;
 grille</PreAssertion>
                               <PostAssertion>grille</PostAssertion>
                               <Titre>grille[coordTir.x][coordTir.y] = 'o'</Titre>
@@ -434,10 +434,10 @@ grille</PreAssertion>
                 <Action>
                   <Position>776;403</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>nbTouche
+                  <PreAssertion>nbTouche&#xd;
 coordBateau</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Vérification condition
+                  <Titre>Vérification condition&#xd;
 d'arrêt</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -468,7 +468,7 @@ d'arrêt</Titre>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>estTouche</PreAssertion>
                   <PostAssertion>estTouche</PostAssertion>
-                  <Titre>Initialisation de
+                  <Titre>Initialisation de&#xd;
 la manche</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
@@ -501,8 +501,8 @@ la manche</Titre>
             <Action>
               <Position>2571;212</Position>
               <StyleLien>2</StyleLien>
-              <PreAssertion>grille
-coordBateau
+              <PreAssertion>grille&#xd;
+coordBateau&#xd;
 nbCoup</PreAssertion>
               <PostAssertion>?</PostAssertion>
               <Titre>Afficher les résultats</Titre>
@@ -524,7 +524,7 @@ nbCoup</PreAssertion>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>coordBateau</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>afficher les coordonnées
+                  <Titre>afficher les coordonnées&#xd;
 du bateau</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
@@ -535,7 +535,7 @@ du bateau</Titre>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>nbCoups</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Afficher le nombre
+                  <Titre>Afficher le nombre&#xd;
 de coups</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>

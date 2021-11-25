@@ -17,6 +17,7 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 
     cout << "  A B C D E F G H I" << endl;
 
+    // Affichage de la grille de jeu
     for (i = 0; i <= (nbLigne - 1); i++)
     {
         cout << i + 1 << " ";
@@ -111,16 +112,31 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
     }
 }
 
+void afficherCoordBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau)
+{
+    Coordonnee coordEnCours;
+    unsigned short int i;
+
+    cout << "Bateau = ";
+
+    for (i = 0; i < longueurBateau; i++)
+    {
+        coordEnCours = indiceVersCoordonnee(tableau[i]);
+        cout << "(" << coordEnCours.coordX << "," << coordEnCours.coordY << ") ";
+    }
+    cout << endl;
+}
+
 Coordonnee indiceVersCoordonnee(IndiceCoordonnee indice)
 {
     //VARIABLES
-    Coordonnee coordonneeFinal; //Les coordonnées qui vont être retourné par le programme
+    Coordonnee coordonneeFinale; //Les coordonnées qui vont être retourné par le programme
 
     //TRAITEMENT
-    coordonneeFinal.coordX = char(indice.coordX + 65);
-    coordonneeFinal.coordY = char(indice.coordY + 49);
+    coordonneeFinale.coordX = char(indice.coordX + 65);
+    coordonneeFinale.coordY = char(indice.coordY + 49);
 
-    return coordonneeFinal;
+    return coordonneeFinale;
 }
 
 IndiceCoordonnee coordonneeVersIndice(Coordonnee coordonnee)
