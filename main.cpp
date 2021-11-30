@@ -40,6 +40,7 @@ int main2(void)
     bool estTouche;      // Indique si le tir touche le navire
     Coordonnee coordTir; // Représente les coordonnées du tir saisies par le joueur
     int y;               // Variable qui va nous permettre de convertir char en int
+    bool abandon;        // True si le joueur souhaite abandonner, false sinon
 
     // Indicateur de saisie
     bool erreurSaisie; // L'utilisateur à fait une erreur de saisie ou pas
@@ -117,8 +118,17 @@ int main2(void)
     // Afficher la grille
     afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
 
-    // Afficher le nombre de tirs effectués pour couler le bateau
-    cout << "Il a fallu " << nbTirs << " tirs pour detruire le bateau ennemi !" << endl;
+    if (abandon)
+    {
+        // Afficher le nombre de touches après un certain nombre de tirs si le joueur abandonne
+        cout << "A B A N D O N - Bateau touche " << nbTouches << " fois sur " << nbTirs;
+    }
+    else
+    {
+        // Afficher le nombre de tirs effectués pour couler le bateau
+        cout << "B A T E A U  C O U L E en " << nbTirs << " tirs !" << endl;
+    }
+    
 
     return 0;
 }
