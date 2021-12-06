@@ -70,6 +70,45 @@ int main2(void)
         afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
 
         // Saisie verif des coordonnées
+        while (true)
+        {
+            // Saisie
+            cout << "Votre " << nbTirs << "eme tir (ex. A3) ou abandonner (@@) : ";
+            cin >> coordTir.coordX;
+            cin >> coordTir.coordY;
+
+            // Recherche d'erreurs
+            if (coordTir.coordX == '@')
+            {
+                if (coordTir.coordY == '@')
+                {
+                    abandon = true;
+                    break;
+                }
+            }
+            else
+            {
+                if (coordTir.coordX == 'A' && coordTir.coordX == 'B' && coordTir.coordX == 'C' && coordTir.coordX == 'D' && coordTir.coordX != 'E' &&
+                    coordTir.coordX == 'F' && coordTir.coordX == 'G' && coordTir.coordX == 'H' && coordTir.coordX == 'I')
+                {
+                    // Verification de la position en Y
+                    if (coordTir.coordY == '1' && coordTir.coordY == '2' && coordTir.coordY == '3' && coordTir.coordY == '4' && coordTir.coordY == '5' &&
+                    coordTir.coordY == '6' && coordTir.coordY == '7' && coordTir.coordY == '8' && coordTir.coordY == '9')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        afficherTexteEnCouleur("Erreur en 'Y' !", rouge, true);
+                    }
+                }
+                else
+                {
+                    afficherTexteEnCouleur("Erreur en 'X' !", rouge, true);
+                }
+            }
+        }
+
         do
         {
             // Avant la saisie on considère qu'il n'y a pas d'erreur
@@ -128,7 +167,6 @@ int main2(void)
         // Afficher le nombre de tirs effectués pour couler le bateau
         cout << "B A T E A U  C O U L E en " << nbTirs << " tirs !" << endl;
     }
-    
 
     return 0;
 }
