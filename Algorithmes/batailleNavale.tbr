@@ -2,48 +2,8 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>6/12/2021 15:18</date_creation>
+  <date_creation>7/12/2021 11:04</date_creation>
   <Elements>
-    <Condition>
-      <Position>1044;1106</Position>
-      <StyleLien>0</StyleLien>
-      <estUnique>0</estUnique>
-      <operationsLogiques>
-        <operation>
-          <Titre>coordTir.coordY = @</Titre>
-          <Enfants>
-            <Action>
-              <Position>818;1174</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>abandon</PreAssertion>
-              <PostAssertion>abandon</PostAssertion>
-              <Titre>abandon ← vrai</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>1</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-            <Sortie>
-              <Position>1147;1185</Position>
-            </Sortie>
-          </Enfants>
-        </operation>
-        <operation>
-          <Titre>Sinon</Titre>
-          <Enfants>
-            <Action>
-              <Position>1222;1181</Position>
-              <StyleLien>1</StyleLien>
-              <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>Afficher Erreur en Y</Titre>
-              <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
-              <Enfants/>
-            </Action>
-          </Enfants>
-        </operation>
-      </operationsLogiques>
-    </Condition>
     <Action>
       <Position>705;11</Position>
       <StyleLien>2</StyleLien>
@@ -252,7 +212,7 @@ bateau (pour correction)</Titre>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>1458;503</Position>
+                  <Position>1453;541</Position>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>coordTir</PostAssertion>
@@ -267,72 +227,287 @@ du tir</Titre>
                       <Titre>?</Titre>
                       <IterationFixe>0</IterationFixe>
                       <Enfants>
-                        <Action>
-                          <Position>1383;874</Position>
+                        <Iteration>
+                          <Position>1385.5;896.5</Position>
                           <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>coordTir.x</PostAssertion>
-                          <Titre>saisie de X</Titre>
-                          <DetailsVisible>1</DetailsVisible>
-                          <DetailsVideVisible>0</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
+                          <Titre>?</Titre>
+                          <IterationFixe>0</IterationFixe>
+                          <Enfants>
+                            <Action>
+                              <Position>718;1126</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Affichage de demande de saisie</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>616;1216</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>coordTir.x</PostAssertion>
+                                  <Titre>saisie de X</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                                <Action>
+                                  <Position>822;1217</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>coordTir.y</PostAssertion>
+                                  <Titre>saisie de Y</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>1010;989</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Recherche d'erreurs de X</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Condition>
+                                  <Position>994;1064</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>coordTir.coordX != 'A' et 'B' et 'C' et 'D' et 'E' et 'F' et 'G' et 'H' et 'I' et '@'</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>941;1155</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>?</PostAssertion>
+                                          <Titre>Afficher Erreur en X</Titre>
+                                          <DetailsVisible>1</DetailsVisible>
+                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                        <Action>
+                                          <Position>1077;1155</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>erreurSaisie</PostAssertion>
+                                          <Titre>erreurSaisie ← vrai</Titre>
+                                          <DetailsVisible>1</DetailsVisible>
+                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>1385;991</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Recherche d'erreurs de Y</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Condition>
+                                  <Position>1369;1066</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>coordTir.coordY != 'A' et 'B' et 'C' et 'D' et 'E' et 'F' et 'G' et 'H' et 'I' et '@'</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>1333;1156</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>?</PostAssertion>
+                                          <Titre>Afficher Erreur en Y</Titre>
+                                          <DetailsVisible>1</DetailsVisible>
+                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                        <Action>
+                                          <Position>1458;1156</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>erreurSaisie</PostAssertion>
+                                          <Titre>erreurSaisie ← vrai</Titre>
+                                          <DetailsVisible>1</DetailsVisible>
+                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>418;981</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>erreurSaisi</PostAssertion>
+                              <Titre>Avant la saisie on considère qu'il n'y a pas d'erreur</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>513;1052</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>erreurSaisie ← faux</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>1672;1002</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Condition de sortie</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>1</DetailsVideVisible>
+                              <Enfants>
+                                <Condition>
+                                  <Position>1658;1076</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>erreurSaisie == faux</Titre>
+                                      <Enfants>
+                                        <Sortie>
+                                          <Position>1719;1142</Position>
+                                        </Sortie>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>Sinon</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
+                        </Iteration>
                         <Action>
-                          <Position>1595;875</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>coordTir.y</PostAssertion>
-                          <Titre>saisie de Y</Titre>
-                          <DetailsVisible>1</DetailsVisible>
-                          <DetailsVideVisible>0</DetailsVideVisible>
-                          <Enfants/>
-                        </Action>
-                        <Action>
-                          <Position>1809;875</Position>
+                          <Position>2014;900</Position>
                           <StyleLien>2</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
-                          <Titre>Recherche d'erreurs</Titre>
+                          <Titre>Recherche de l'abandon</Titre>
                           <DetailsVisible>0</DetailsVisible>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants>
                             <Condition>
-                              <Position>1673;975</Position>
+                              <Position>1967;976</Position>
                               <StyleLien>0</StyleLien>
                               <estUnique>0</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>coordTir.coordX = 'A' ou 'B' ou 'C' ou 'D' ou 'E' ou 'F' ou 'G' ou 'H' ou 'I' ou '@'</Titre>
-                                  <Enfants/>
+                                  <Titre>coordTir.coordX = @ et coordTir.coordY = @</Titre>
+                                  <Enfants>
+                                    <Action>
+                                      <Position>1835;1066</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>abandon</PreAssertion>
+                                      <PostAssertion>abandon</PostAssertion>
+                                      <Titre>abandon ← vrai</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>1</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
+                                    <Sortie>
+                                      <Position>2045;1143</Position>
+                                    </Sortie>
+                                  </Enfants>
                                 </operation>
                                 <operation>
                                   <Titre>Sinon</Titre>
                                   <Enfants>
-                                    <Action>
-                                      <Position>1835;1061</Position>
+                                    <Condition>
+                                      <Position>2193;1052</Position>
                                       <StyleLien>1</StyleLien>
-                                      <PreAssertion>?</PreAssertion>
-                                      <PostAssertion>?</PostAssertion>
-                                      <Titre>Afficher Erreur en X</Titre>
-                                      <DetailsVisible>1</DetailsVisible>
-                                      <DetailsVideVisible>0</DetailsVideVisible>
-                                      <Enfants/>
-                                    </Action>
+                                      <estUnique>0</estUnique>
+                                      <operationsLogiques>
+                                        <operation>
+                                          <Titre>coordTir.coordX != @ et coordTir.coordY = @</Titre>
+                                          <Enfants>
+                                            <Action>
+                                              <Position>2149;1138</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>?</PreAssertion>
+                                              <PostAssertion>?</PostAssertion>
+                                              <Titre>Afficher Erreur en X</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>0</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                            <Action>
+                                              <Position>2240;1193</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>?</PreAssertion>
+                                              <PostAssertion>erreurSaisie</PostAssertion>
+                                              <Titre>erreurSaisie ← vrai</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>0</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                          </Enfants>
+                                        </operation>
+                                        <operation>
+                                          <Titre>coordTir.coordX = @ et coordTir.coordY != @</Titre>
+                                          <Enfants>
+                                            <Action>
+                                              <Position>2365;1135</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>?</PreAssertion>
+                                              <PostAssertion>erreurSaisie</PostAssertion>
+                                              <Titre>erreurSaisie ← vrai</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>0</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                            <Action>
+                                              <Position>2552;1187</Position>
+                                              <StyleLien>1</StyleLien>
+                                              <PreAssertion>?</PreAssertion>
+                                              <PostAssertion>?</PostAssertion>
+                                              <Titre>Afficher Erreur en Y</Titre>
+                                              <DetailsVisible>1</DetailsVisible>
+                                              <DetailsVideVisible>0</DetailsVideVisible>
+                                              <Enfants/>
+                                            </Action>
+                                          </Enfants>
+                                        </operation>
+                                      </operationsLogiques>
+                                    </Condition>
                                   </Enfants>
                                 </operation>
                               </operationsLogiques>
                             </Condition>
                           </Enfants>
-                        </Action>
-                        <Action>
-                          <Position>1180;873</Position>
-                          <StyleLien>1</StyleLien>
-                          <PreAssertion>?</PreAssertion>
-                          <PostAssertion>?</PostAssertion>
-                          <Titre>Affichage de demande de saisie</Titre>
-                          <DetailsVisible>0</DetailsVisible>
-                          <DetailsVideVisible>1</DetailsVideVisible>
-                          <Enfants/>
                         </Action>
                       </Enfants>
                     </Iteration>
@@ -525,12 +700,42 @@ la manche</Titre>
                     </Action>
                   </Enfants>
                 </Action>
+                <Action>
+                  <Position>1657;389</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>Cas de l'abandon</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Condition>
+                      <Position>1701;464</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>abandon = vrai</Titre>
+                          <Enfants>
+                            <Sortie>
+                              <Position>1763;536</Position>
+                            </Sortie>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Action>
               </Enfants>
             </Iteration>
           </Enfants>
         </Action>
         <Action>
-          <Position>2750;106</Position>
+          <Position>3006;106</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -539,7 +744,7 @@ la manche</Titre>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>2656;188</Position>
+              <Position>2912;188</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>grille&#xd;
 coordBateau&#xd;
@@ -550,7 +755,7 @@ nbCoup</PreAssertion>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>2688;389</Position>
+                  <Position>2944;389</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>grille</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -560,7 +765,7 @@ nbCoup</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>2503;297</Position>
+                  <Position>2759;297</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>coordBateau</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -571,7 +776,7 @@ du bateau</Titre>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>2864;300</Position>
+                  <Position>3120;300</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>nbCoups</PreAssertion>
                   <PostAssertion>?</PostAssertion>

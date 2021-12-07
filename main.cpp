@@ -73,7 +73,7 @@ int main(void)
         afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
 
         // Saisie verif des coordonnées
-        while (true)
+        do
         {
             do
             {
@@ -81,6 +81,7 @@ int main(void)
                 erreurSaisie = false;
 
                 // Saisie
+                cout << endl;
                 cout << "Votre " << nbTirs << "e tir (ex. A3) ou abandonner (@@) : ";
                 cin >> coordTir.coordX;
                 cin >> coordTir.coordY;
@@ -100,8 +101,7 @@ int main(void)
                     afficherTexteEnCouleur("Erreur en 'Y' !", rouge, true);
                     erreurSaisie = true;
                 }
-            }
-            while (erreurSaisie == true);
+            } while (erreurSaisie == true);
 
             // Recherche de l'abandon
             if (coordTir.coordX == '@' && coordTir.coordY == '@')
@@ -122,31 +122,38 @@ int main(void)
                     erreurSaisie = true;
                 }
             }
+        }
+        while (erreurSaisie == true);
 
-            if (erreurSaisie == false)
+        // Condition de sortie - cas de l'abandon
+        if (abandon)
+        {
+            break;
+        }
+
+        // Determiner si le tir touche le bateau ou non
+        for (int i = 0; i < LONG_BATEAU; i++)
+        {
+            if (coordonneeVersIndice(coordTir).coordX == coordBateau[i].coordX && coordonneeVersIndice(coordTir).coordY == coordBateau[i].coordY)
             {
-                break;
+                cout << "Touche !";
+                estTouche = true;
             }
         }
-    }
-    // Determiner si le tir touche le bateau ou non
-    for (int i = 0; i < LONG_BATEAU; i++)
-    {
-        if (coordonneeVersIndice(coordTir).coordX == coordBateau[i].coordX && coordonneeVersIndice(coordTir).coordY == coordBateau[i].coordY)
-        {
-            cout << "Touche !";
-            estTouche = true;
-        }
-    }
 
-    // Marquer la grille
+        // Marquer la grille
+        
 
-    // Incrémentation du nombre de Tirs
-    nbTirs++;
+        // Incrémentation du nombre de Tirs
+        nbTirs++;
+    }
 
     /********** FIN DE LA PARTIE **********/
+    // Effacer l'ecran
+    effacer();
+
     // Afficher les coordonnées du bateau
-    afficherCoordBateau(coordBateau,LONG_BATEAU);
+    afficherCoordBateau(coordBateau, LONG_BATEAU);
 
     // Afficher la grille
     afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
@@ -161,20 +168,6 @@ int main(void)
         // Afficher le nombre de tirs effectués pour couler le bateau
         cout << "B A T E A U  C O U L E en " << nbTirs << " tirs !" << endl;
     }
-
-    return 0;
-}
-
-
-int main2(void)
-{
-    int const longueurBateau = 4;
-    IndiceCoordonnee tableau[longueurBateau];
-    Coordonnee nouveauTab[longueurBateau];
-
-    placerBateau(tableau, longueurBateau, 9, 9);
-
-    afficherCoordBateau(tableau, longueurBateau);
 
     return 0;
 }
