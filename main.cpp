@@ -37,10 +37,10 @@ int main(void)
     IndiceCoordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
 
     // Concernant le tir
+    bool dejaJoue;              // Indique si le joueur a deja joué a ces indices la ou non 
     bool estTouche;             // Indique si le tir touche le navire
     Coordonnee coordTir;        // Représente les coordonnées du tir saisies par le joueur
     IndiceCoordonnee cooTir;    // Représente les indices des coordonnées du tir, à utiliser dans le plateau 
-    int y;                      // Variable qui va nous permettre de convertir char en int
     bool abandon;               // True si le joueur souhaite abandonner, false sinon
 
     // Indicateur de saisie
@@ -49,7 +49,7 @@ int main(void)
     /************************************* TRATEMENTS *************************************/
     /********** INITIALISATION **********/
     // Mise des variables à leurs statuts initiaux
-    erreurSaisie == true;
+    erreurSaisie = true;
 
     // Initialiser les compteurs
     nbTouches = 0;
@@ -138,6 +138,12 @@ int main(void)
 
         // Incrémentation du nombre de Tirs
         nbTirs++;
+
+        // Rechercher si le joueur a déja tiré ici ou pas
+        // Au debut on considère qu'il na pas joué à ces indices
+        dejaJoue = false;
+
+        
 
         // Determiner si le tir touche le bateau ou non
         for (int i = 0; i < LONG_BATEAU; i++)
