@@ -37,10 +37,11 @@ int main(void)
     IndiceCoordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
 
     // Concernant le tir
-    bool estTouche;      // Indique si le tir touche le navire
-    Coordonnee coordTir; // Représente les coordonnées du tir saisies par le joueur
-    int y;               // Variable qui va nous permettre de convertir char en int
-    bool abandon;        // True si le joueur souhaite abandonner, false sinon
+    bool estTouche;             // Indique si le tir touche le navire
+    Coordonnee coordTir;        // Représente les coordonnées du tir saisies par le joueur
+    IndiceCoordonnee cooTir;    // Représente les indices des coordonnées du tir, à utiliser dans le plateau 
+    int y;                      // Variable qui va nous permettre de convertir char en int
+    bool abandon;               // True si le joueur souhaite abandonner, false sinon
 
     // Indicateur de saisie
     bool erreurSaisie; // L'utilisateur à fait une erreur de saisie ou pas
@@ -50,15 +51,12 @@ int main(void)
     // Mise des variables à leurs statuts initiaux
     erreurSaisie == true;
 
-    // Affichage de l'entête
-    afficherRegles();
+    // Initialiser les compteurs
+    nbTouches = 0;
+    nbTirs = 0;
 
     // Initialiser les coordonnées du bateau
     placerBateau(coordBateau, LONG_BATEAU, NB_COLONNES, NB_LIGNES);
-
-    // Initialiser les compteurs
-    nbTouches = 0;
-    nbTirs = 1;
 
     /********** JOUER LA PARTIE **********/
     while (nbTouches < LONG_BATEAU)
@@ -68,6 +66,12 @@ int main(void)
 
         // Effacer l'écran
         effacer();
+
+        // Affichage de l'entête
+        afficherRegles();
+
+        // Affichage des coordonnées du bateau
+        afficherCoordBateau(coordBateau, LONG_BATEAU);
 
         // Afficher la nouvelle grille
         afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
@@ -81,8 +85,7 @@ int main(void)
                 erreurSaisie = false;
 
                 // Saisie
-                cout << endl;
-                cout << "Votre " << nbTirs << "e tir (ex. A3) ou abandonner (@@) : ";
+                cout << "Votre " << nbTirs+1 << "e tir (ex. A3) ou abandonner (@@) : ";
                 cin >> coordTir.coordX;
                 cin >> coordTir.coordY;
 
@@ -125,11 +128,16 @@ int main(void)
         }
         while (erreurSaisie == true);
 
+        
+
         // Condition de sortie - cas de l'abandon
         if (abandon)
         {
             break;
         }
+
+        // Incrémentation du nombre de Tirs
+        nbTirs++;
 
         // Determiner si le tir touche le bateau ou non
         for (int i = 0; i < LONG_BATEAU; i++)
@@ -138,19 +146,30 @@ int main(void)
             {
                 cout << "Touche !";
                 estTouche = true;
+                nbTouches++;
             }
         }
 
         // Marquer la grille
-        
+        cooTir.coordX = coordonneeVersIndice(coordTir).coordX;
+        cooTir.coordY = coordonneeVersIndice(coordTir).coordY;
 
-        // Incrémentation du nombre de Tirs
-        nbTirs++;
+        if (estTouche)
+        {
+            plateau[cooTir.coordY][cooTir.coordX] = 'o';
+        }
+        else
+        {
+            plateau[cooTir.coordY][cooTir.coordX] = '.';
+        }
     }
 
     /********** FIN DE LA PARTIE **********/
     // Effacer l'ecran
     effacer();
+
+    // Affichage de l'entête
+    afficherRegles();
 
     // Afficher les coordonnées du bateau
     afficherCoordBateau(coordBateau, LONG_BATEAU);
@@ -161,7 +180,7 @@ int main(void)
     if (abandon)
     {
         // Afficher le nombre de touches après un certain nombre de tirs si le joueur abandonne
-        cout << "A B A N D O N - Bateau touche " << nbTouches << " fois sur " << nbTirs;
+        cout << "A B A N D O N - Bateau touche " << nbTouches << " fois sur " << nbTirs << ".";
     }
     else
     {

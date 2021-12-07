@@ -30,6 +30,7 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
         // Passage à la ligne
         cout << endl;
     }
+    cout << endl;
 }
 
 void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau)
@@ -125,6 +126,7 @@ void afficherCoordBateau(IndiceCoordonnee tableau[], unsigned short int longueur
         cout << "(" << coordEnCours.coordX << "," << coordEnCours.coordY << ") ";
     }
     cout << endl;
+    cout << endl;
 }
 
 Coordonnee indiceVersCoordonnee(IndiceCoordonnee indice)
@@ -146,7 +148,7 @@ IndiceCoordonnee coordonneeVersIndice(Coordonnee coordonnee)
 
     //TRAITEMENT
     indiceFinal.coordX = int(coordonnee.coordX) - 65;
-    indiceFinal.coordY = int(coordonnee.coordY) - 48;
+    indiceFinal.coordY = int(coordonnee.coordY) - 49;
 
     return indiceFinal;
 }
