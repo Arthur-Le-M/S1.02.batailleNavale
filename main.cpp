@@ -11,7 +11,7 @@
 #include "game-tools.h"
 using namespace std;
 
-int main2(void)
+int main(void)
 {
     /************************************* VARIABLES *************************************/
     // Créer la grille/le plateau de jeu
@@ -47,6 +47,9 @@ int main2(void)
 
     /************************************* TRATEMENTS *************************************/
     /********** INITIALISATION **********/
+    // Mise des variables à leurs statuts initiaux
+    erreurSaisie == true;
+
     // Affichage de l'entête
     afficherRegles();
 
@@ -55,7 +58,7 @@ int main2(void)
 
     // Initialiser les compteurs
     nbTouches = 0;
-    nbTirs = 0;
+    nbTirs = 1;
 
     /********** JOUER LA PARTIE **********/
     while (nbTouches < LONG_BATEAU)
@@ -72,87 +75,78 @@ int main2(void)
         // Saisie verif des coordonnées
         while (true)
         {
-            // Saisie
-            cout << "Votre " << nbTirs << "eme tir (ex. A3) ou abandonner (@@) : ";
-            cin >> coordTir.coordX;
-            cin >> coordTir.coordY;
-
-            // Recherche d'erreurs
-            if (coordTir.coordX == '@')
+            do
             {
-                if (coordTir.coordY == '@')
+                // Avant la saisie on considère qu'il n'y a pas d'erreur
+                erreurSaisie = false;
+
+                // Saisie
+                cout << "Votre " << nbTirs << "e tir (ex. A3) ou abandonner (@@) : ";
+                cin >> coordTir.coordX;
+                cin >> coordTir.coordY;
+
+                // Recherche en coordX
+                if (coordTir.coordX != 'A' && coordTir.coordX != 'B' && coordTir.coordX != 'C' && coordTir.coordX != 'D' && coordTir.coordX != 'E' &&
+                    coordTir.coordX != 'F' && coordTir.coordX != 'G' && coordTir.coordX != 'H' && coordTir.coordX != 'I' && coordTir.coordX != '@')
                 {
-                    abandon = true;
-                    break;
+                    afficherTexteEnCouleur("Erreur en 'X' !", rouge, true);
+                    erreurSaisie = true;
                 }
+
+                // Recherche en coordY
+                if (coordTir.coordY != '1' && coordTir.coordY != '2' && coordTir.coordY != '3' && coordTir.coordY != '4' && coordTir.coordY != '5' &&
+                    coordTir.coordY != '6' && coordTir.coordY != '7' && coordTir.coordY != '8' && coordTir.coordY != '9' && coordTir.coordY != '@')
+                {
+                    afficherTexteEnCouleur("Erreur en 'Y' !", rouge, true);
+                    erreurSaisie = true;
+                }
+            }
+            while (erreurSaisie == true);
+
+            // Recherche de l'abandon
+            if (coordTir.coordX == '@' && coordTir.coordY == '@')
+            {
+                abandon = true;
+                break;
             }
             else
             {
-                if (coordTir.coordX == 'A' && coordTir.coordX == 'B' && coordTir.coordX == 'C' && coordTir.coordX == 'D' && coordTir.coordX != 'E' &&
-                    coordTir.coordX == 'F' && coordTir.coordX == 'G' && coordTir.coordX == 'H' && coordTir.coordX == 'I')
-                {
-                    // Verification de la position en Y
-                    if (coordTir.coordY == '1' && coordTir.coordY == '2' && coordTir.coordY == '3' && coordTir.coordY == '4' && coordTir.coordY == '5' &&
-                    coordTir.coordY == '6' && coordTir.coordY == '7' && coordTir.coordY == '8' && coordTir.coordY == '9')
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        afficherTexteEnCouleur("Erreur en 'Y' !", rouge, true);
-                    }
-                }
-                else
+                if (coordTir.coordX != '@' && coordTir.coordY == '@')
                 {
                     afficherTexteEnCouleur("Erreur en 'X' !", rouge, true);
+                    erreurSaisie = true;
+                }
+                else if (coordTir.coordX == '@' && coordTir.coordY != '@')
+                {
+                    afficherTexteEnCouleur("Erreur en 'Y' !", rouge, true);
+                    erreurSaisie = true;
                 }
             }
-        }
 
-        do
-        {
-            // Avant la saisie on considère qu'il n'y a pas d'erreur
-            erreurSaisie = false;
-
-            // Saisie
-            cout << "Votre " << nbTirs << "eme tir (ex. A3) ou abandonner (@@) : ";
-            cin >> coordTir.coordX;
-            cin >> coordTir.coordY;
-
-            // Verification de la position en X
-            if (coordTir.coordX != 'A' && coordTir.coordX != 'B' && coordTir.coordX != 'C' && coordTir.coordX != 'D' && coordTir.coordX != 'E' &&
-                coordTir.coordX != 'F' && coordTir.coordX != 'G' && coordTir.coordX != 'H' && coordTir.coordX != 'I')
+            if (erreurSaisie == false)
             {
-                afficherTexteEnCouleur("Erreur en 'X' !", rouge, true);
-                erreurSaisie = true;
-            }
-
-            // Passage de char à int pour coord Y
-            y = int(coordTir.coordY);
-
-            // Verification de la position en Y
-            if (y < 1 || y > 9)
-            {
-                afficherTexteEnCouleur("Erreur en 'Y' !", rouge, true);
-                erreurSaisie = true;
-            }
-        } while (erreurSaisie == true);
-
-        // Determiner si le tir touche le bateau ou non
-        for (int i = 0; i < LONG_BATEAU; i++)
-        {
-            if (coordonneeVersIndice(coordTir).coordX == coordBateau[i].coordX && coordonneeVersIndice(coordTir).coordY == coordBateau[i].coordY)
-            {
-                cout << "Touché !";
-                estTouche = true;
+                break;
             }
         }
-
-        // Marquer la grille
     }
+    // Determiner si le tir touche le bateau ou non
+    for (int i = 0; i < LONG_BATEAU; i++)
+    {
+        if (coordonneeVersIndice(coordTir).coordX == coordBateau[i].coordX && coordonneeVersIndice(coordTir).coordY == coordBateau[i].coordY)
+        {
+            cout << "Touche !";
+            estTouche = true;
+        }
+    }
+
+    // Marquer la grille
+
+    // Incrémentation du nombre de Tirs
+    nbTirs++;
 
     /********** FIN DE LA PARTIE **********/
     // Afficher les coordonnées du bateau
+    afficherCoordBateau(coordBateau,LONG_BATEAU);
 
     // Afficher la grille
     afficherGrille(plateau, NB_LIGNES, NB_COLONNES);
@@ -171,7 +165,8 @@ int main2(void)
     return 0;
 }
 
-int main(void)
+
+int main2(void)
 {
     int const longueurBateau = 4;
     IndiceCoordonnee tableau[longueurBateau];

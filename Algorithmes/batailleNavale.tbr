@@ -2,8 +2,48 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>6/12/2021 11:46</date_creation>
+  <date_creation>6/12/2021 15:18</date_creation>
   <Elements>
+    <Condition>
+      <Position>1044;1106</Position>
+      <StyleLien>0</StyleLien>
+      <estUnique>0</estUnique>
+      <operationsLogiques>
+        <operation>
+          <Titre>coordTir.coordY = @</Titre>
+          <Enfants>
+            <Action>
+              <Position>818;1174</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>abandon</PreAssertion>
+              <PostAssertion>abandon</PostAssertion>
+              <Titre>abandon ← vrai</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Sortie>
+              <Position>1147;1185</Position>
+            </Sortie>
+          </Enfants>
+        </operation>
+        <operation>
+          <Titre>Sinon</Titre>
+          <Enfants>
+            <Action>
+              <Position>1222;1181</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Afficher Erreur en Y</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </operation>
+      </operationsLogiques>
+    </Condition>
     <Action>
       <Position>705;11</Position>
       <StyleLien>2</StyleLien>
@@ -123,7 +163,7 @@ nbTirs</PostAssertion>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>nbTirs</PostAssertion>
-                  <Titre>nbTirs ← 0</Titre>
+                  <Titre>nbTirs ← 1</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
                   <Enfants/>
@@ -257,104 +297,27 @@ du tir</Titre>
                           <DetailsVideVisible>1</DetailsVideVisible>
                           <Enfants>
                             <Condition>
-                              <Position>1651;979</Position>
+                              <Position>1673;975</Position>
                               <StyleLien>0</StyleLien>
                               <estUnique>0</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>coordTir.coordX = @ </Titre>
-                                  <Enfants>
-                                    <Condition>
-                                      <Position>1600;1050</Position>
-                                      <StyleLien>1</StyleLien>
-                                      <estUnique>1</estUnique>
-                                      <operationsLogiques>
-                                        <operation>
-                                          <Titre>coordTir.coordY = @</Titre>
-                                          <Enfants>
-                                            <Action>
-                                              <Position>1374;1136</Position>
-                                              <StyleLien>1</StyleLien>
-                                              <PreAssertion>abandon</PreAssertion>
-                                              <PostAssertion>abandon</PostAssertion>
-                                              <Titre>abandon ← vrai</Titre>
-                                              <DetailsVisible>1</DetailsVisible>
-                                              <DetailsVideVisible>1</DetailsVideVisible>
-                                              <Enfants/>
-                                            </Action>
-                                            <Sortie>
-                                              <Position>1698;1151</Position>
-                                            </Sortie>
-                                          </Enfants>
-                                        </operation>
-                                        <operation>
-                                          <Titre>Sinon</Titre>
-                                          <Enfants/>
-                                        </operation>
-                                      </operationsLogiques>
-                                    </Condition>
-                                  </Enfants>
+                                  <Titre>coordTir.coordX = 'A' ou 'B' ou 'C' ou 'D' ou 'E' ou 'F' ou 'G' ou 'H' ou 'I' ou '@'</Titre>
+                                  <Enfants/>
                                 </operation>
                                 <operation>
                                   <Titre>Sinon</Titre>
                                   <Enfants>
-                                    <Condition>
-                                      <Position>1821;1058</Position>
-                                      <StyleLien>0</StyleLien>
-                                      <estUnique>0</estUnique>
-                                      <operationsLogiques>
-                                        <operation>
-                                          <Titre>coordTir.coordX = 'A' ou 'B' ou 'C' ou 'D' ou 'E' ou 'F' ou 'G' ou 'H' ou 'I' </Titre>
-                                          <Enfants>
-                                            <Condition>
-                                              <Position>1769;1134</Position>
-                                              <StyleLien>0</StyleLien>
-                                              <estUnique>0</estUnique>
-                                              <operationsLogiques>
-                                                <operation>
-                                                  <Titre>coordTir.coordY = 1 ou 2 ou 3 ou 4 ou 5 ou 6 ou 7 ou 8 ou 9</Titre>
-                                                  <Enfants>
-                                                    <Sortie>
-                                                      <Position>1836;1214</Position>
-                                                    </Sortie>
-                                                  </Enfants>
-                                                </operation>
-                                                <operation>
-                                                  <Titre>Sinon</Titre>
-                                                  <Enfants>
-                                                    <Action>
-                                                      <Position>1922;1206</Position>
-                                                      <StyleLien>1</StyleLien>
-                                                      <PreAssertion>?</PreAssertion>
-                                                      <PostAssertion>?</PostAssertion>
-                                                      <Titre>Afficher Erreur en Y</Titre>
-                                                      <DetailsVisible>1</DetailsVisible>
-                                                      <DetailsVideVisible>0</DetailsVideVisible>
-                                                      <Enfants/>
-                                                    </Action>
-                                                  </Enfants>
-                                                </operation>
-                                              </operationsLogiques>
-                                            </Condition>
-                                          </Enfants>
-                                        </operation>
-                                        <operation>
-                                          <Titre>Sinon</Titre>
-                                          <Enfants>
-                                            <Action>
-                                              <Position>2031;1127</Position>
-                                              <StyleLien>1</StyleLien>
-                                              <PreAssertion>?</PreAssertion>
-                                              <PostAssertion>?</PostAssertion>
-                                              <Titre>Afficher Erreur en X</Titre>
-                                              <DetailsVisible>1</DetailsVisible>
-                                              <DetailsVideVisible>0</DetailsVideVisible>
-                                              <Enfants/>
-                                            </Action>
-                                          </Enfants>
-                                        </operation>
-                                      </operationsLogiques>
-                                    </Condition>
+                                    <Action>
+                                      <Position>1835;1061</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <PreAssertion>?</PreAssertion>
+                                      <PostAssertion>?</PostAssertion>
+                                      <Titre>Afficher Erreur en X</Titre>
+                                      <DetailsVisible>1</DetailsVisible>
+                                      <DetailsVideVisible>0</DetailsVideVisible>
+                                      <Enfants/>
+                                    </Action>
                                   </Enfants>
                                 </operation>
                               </operationsLogiques>
@@ -414,7 +377,7 @@ touche ou non</Titre>
                                   <Enfants/>
                                 </Action>
                                 <Action>
-                                  <Position>1975;659</Position>
+                                  <Position>1938;665</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>nbTouche</PreAssertion>
                                   <PostAssertion>nbTouche</PostAssertion>
@@ -436,7 +399,7 @@ touche ou non</Titre>
                   </Enfants>
                 </Action>
                 <Action>
-                  <Position>2288;561</Position>
+                  <Position>2227;584</Position>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>coordTir&#xd;
 estTouche&#xd;
@@ -447,7 +410,7 @@ grille</PreAssertion>
                   <DetailsVideVisible>1</DetailsVideVisible>
                   <Enfants>
                     <Condition>
-                      <Position>2327;667</Position>
+                      <Position>2287;661</Position>
                       <StyleLien>0</StyleLien>
                       <estUnique>0</estUnique>
                       <operationsLogiques>
@@ -455,12 +418,12 @@ grille</PreAssertion>
                           <Titre>estTouche = vrai</Titre>
                           <Enfants>
                             <Action>
-                              <Position>2212;767</Position>
+                              <Position>2144;758</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>coordTir&#xd;
 grille</PreAssertion>
                               <PostAssertion>grille</PostAssertion>
-                              <Titre>grille[coordTir.x][coordTir.y] = 'o'</Titre>
+                              <Titre>plateau[coordTir.x][coordTir.y] = 'o'</Titre>
                               <DetailsVisible>1</DetailsVisible>
                               <DetailsVideVisible>1</DetailsVideVisible>
                               <Enfants/>
@@ -471,12 +434,12 @@ grille</PreAssertion>
                           <Titre>Sinon</Titre>
                           <Enfants>
                             <Action>
-                              <Position>2548;829</Position>
+                              <Position>2455;817</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>coordTir&#xd;
 grille</PreAssertion>
                               <PostAssertion>grille</PostAssertion>
-                              <Titre>grille[coordTir.x][coordTir.y] = 'o'</Titre>
+                              <Titre>plateau[coordTir.x][coordTir.y] = '.'</Titre>
                               <DetailsVisible>1</DetailsVisible>
                               <DetailsVideVisible>1</DetailsVideVisible>
                               <Enfants/>
@@ -541,12 +504,33 @@ la manche</Titre>
                     </Action>
                   </Enfants>
                 </Action>
+                <Action>
+                  <Position>2483;499</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>nbTirs</PreAssertion>
+                  <PostAssertion>nbTirs</PostAssertion>
+                  <Titre>Incrémentation du nombre de tirs</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>2550;580</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>nbTirs = nbTirs + 1</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>1</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
               </Enfants>
             </Iteration>
           </Enfants>
         </Action>
         <Action>
-          <Position>2665;130</Position>
+          <Position>2750;106</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -555,7 +539,7 @@ la manche</Titre>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>2571;212</Position>
+              <Position>2656;188</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>grille&#xd;
 coordBateau&#xd;
@@ -566,7 +550,7 @@ nbCoup</PreAssertion>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>2603;413</Position>
+                  <Position>2688;389</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>grille</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -576,7 +560,7 @@ nbCoup</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>2418;321</Position>
+                  <Position>2503;297</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>coordBateau</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -587,7 +571,7 @@ du bateau</Titre>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>2779;324</Position>
+                  <Position>2864;300</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>nbCoups</PreAssertion>
                   <PostAssertion>?</PostAssertion>
