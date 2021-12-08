@@ -37,11 +37,10 @@ int main(void)
     IndiceCoordonnee coordBateau[LONG_BATEAU]; // Les coordonnées du bateau
 
     // Concernant le tir
-    bool dejaJoue;              // Indique si le joueur a deja joué a ces indices la ou non 
-    bool estTouche;             // Indique si le tir touche le navire
-    Coordonnee coordTir;        // Représente les coordonnées du tir saisies par le joueur
-    IndiceCoordonnee cooTir;    // Représente les indices des coordonnées du tir, à utiliser dans le plateau 
-    bool abandon;               // True si le joueur souhaite abandonner, false sinon
+    bool dejaJoue;           // Indique si le joueur a deja joué a ces indices la ou non
+    bool estTouche;          // Indique si le tir touche le navire
+    Coordonnee coordTir;     // Représente les coordonnées du tir saisies par le joueur
+    bool abandon;            // True si le joueur souhaite abandonner, false sinon
 
     // Indicateur de saisie
     bool erreurSaisie; // L'utilisateur à fait une erreur de saisie ou pas
@@ -85,7 +84,7 @@ int main(void)
                 erreurSaisie = false;
 
                 // Saisie
-                cout << "Votre " << nbTirs+1 << "e tir (ex. A3) ou abandonner (@@) : ";
+                cout << "Votre " << nbTirs + 1 << "e tir (ex. A3) ou abandonner (@@) : ";
                 cin >> coordTir.coordX;
                 cin >> coordTir.coordY;
 
@@ -125,10 +124,7 @@ int main(void)
                     erreurSaisie = true;
                 }
             }
-        }
-        while (erreurSaisie == true);
-
-        
+        } while (erreurSaisie == true);
 
         // Condition de sortie - cas de l'abandon
         if (abandon)
@@ -143,30 +139,34 @@ int main(void)
         // Au debut on considère qu'il na pas joué à ces indices
         dejaJoue = false;
 
-        
-
-        // Determiner si le tir touche le bateau ou non
-        for (int i = 0; i < LONG_BATEAU; i++)
+        if (plateau[coordonneeVersIndice(coordTir).coordY][coordonneeVersIndice(coordTir).coordX] == '.' 
+            || plateau[coordonneeVersIndice(coordTir).coordY][coordonneeVersIndice(coordTir).coordX] == 'o')
         {
-            if (coordonneeVersIndice(coordTir).coordX == coordBateau[i].coordX && coordonneeVersIndice(coordTir).coordY == coordBateau[i].coordY)
+            dejaJoue = true;
+        }
+
+        if (!dejaJoue)
+        {
+            // Determiner si le tir touche le bateau ou non
+            for (int i = 0; i < LONG_BATEAU; i++)
             {
-                cout << "Touche !";
-                estTouche = true;
-                nbTouches++;
+                if (coordonneeVersIndice(coordTir).coordX == coordBateau[i].coordX && coordonneeVersIndice(coordTir).coordY == coordBateau[i].coordY)
+                {
+                    cout << "Touche !";
+                    estTouche = true;
+                    nbTouches++;
+                }
             }
-        }
 
-        // Marquer la grille
-        cooTir.coordX = coordonneeVersIndice(coordTir).coordX;
-        cooTir.coordY = coordonneeVersIndice(coordTir).coordY;
-
-        if (estTouche)
-        {
-            plateau[cooTir.coordY][cooTir.coordX] = 'o';
-        }
-        else
-        {
-            plateau[cooTir.coordY][cooTir.coordX] = '.';
+            // Marquer la grille
+            if (estTouche)
+            {
+                plateau[coordonneeVersIndice(coordTir).coordY][coordonneeVersIndice(coordTir).coordX] = 'o';
+            }
+            else
+            {
+                plateau[coordonneeVersIndice(coordTir).coordY][coordonneeVersIndice(coordTir).coordX] = '.';
+            }
         }
     }
 
