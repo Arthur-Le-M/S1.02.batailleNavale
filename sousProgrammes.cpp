@@ -36,7 +36,6 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau)
 {
     // VARIABLES
-    IndiceCoordonnee coordBateau;
     bool erreur = true;            // condition d'arrêt
     unsigned short int sensBateau; // Sens dans lequel sera le bateau (compris entre 1 et 4)
 
@@ -49,7 +48,7 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
         // Mettre erreur a true
         erreur = true;
         // Determiner dans quel sens sera le bateau
-        sensBateau = random(1, 4);
+        sensBateau = static_cast<unsigned short int>(random(1, 4)); // Transtypage car on ne veut pas mettre de int (random) dans un unsigned short int (sensBateau) (-> eviter un warning)
 
         // PLACEMENT DU BATEAU
         for (unsigned int i = 1; i < longueurBateau; i++)

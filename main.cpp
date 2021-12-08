@@ -132,9 +132,6 @@ int main(void)
             break;
         }
 
-        // Incrémentation du nombre de Tirs
-        nbTirs++;
-
         // Rechercher si le joueur a déja tiré ici ou pas
         // Au debut on considère qu'il na pas joué à ces indices
         dejaJoue = false;
@@ -145,7 +142,7 @@ int main(void)
             dejaJoue = true;
         }
 
-        if (!dejaJoue)
+        if (dejaJoue == false)
         {
             // Determiner si le tir touche le bateau ou non
             for (int i = 0; i < LONG_BATEAU; i++)
@@ -167,6 +164,14 @@ int main(void)
             {
                 plateau[coordonneeVersIndice(coordTir).coordY][coordonneeVersIndice(coordTir).coordX] = '.';
             }
+
+            // Incrémentation du nombre de Tirs
+            nbTirs++;
+        }
+        else
+        {
+            cout << "Vous avez deja tire ici !" << endl;
+            pause(2);
         }
     }
 
