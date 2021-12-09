@@ -36,17 +36,17 @@ void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColo
 void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau)
 {
     // VARIABLES
-    bool erreur = true;            // condition d'arrêt
+    bool continuer = true;            // condition d'arrêt
     unsigned short int sensBateau; // Sens dans lequel sera le bateau (compris entre 1 et 4)
 
-    while (erreur == true)
+    while (continuer == true)
     {
         // INITIALISATION
         // Déterminer la coordonnée de base du bateau
         tableau[0].coordX = random(0, largeurPlateau - 1);
         tableau[0].coordY = random(0, hauteurPlateau - 1);
-        // Mettre erreur a true
-        erreur = true;
+        // Mettre continuer a true
+        continuer = true;
         // Determiner dans quel sens sera le bateau
         sensBateau = static_cast<unsigned short int>(random(1, 4)); // Transtypage car on ne veut pas mettre de int (random) dans un unsigned short int (sensBateau) (-> eviter un warning)
 
@@ -61,7 +61,7 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i - 1].coordX + 1;
                     tableau[i].coordY = tableau[i - 1].coordY;
-                    erreur = false;
+                    continuer = false;
                 }
                 else
                 {
@@ -74,7 +74,7 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i - 1].coordX;
                     tableau[i].coordY = tableau[i - 1].coordY + 1;
-                    erreur = false;
+                    continuer = false;
                 }
                 else
                 {
@@ -87,7 +87,7 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i - 1].coordX + 1;
                     tableau[i].coordY = tableau[i - 1].coordY + 1;
-                    erreur = false;
+                    continuer = false;
                 }
                 else
                 {
@@ -100,7 +100,7 @@ void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau,
                     //Déterminer les coordonnées de la suite du bateau
                     tableau[i].coordX = tableau[i - 1].coordX - 1;
                     tableau[i].coordY = tableau[i - 1].coordY - 1;
-                    erreur = false;
+                    continuer = false;
                 }
                 else
                 {
