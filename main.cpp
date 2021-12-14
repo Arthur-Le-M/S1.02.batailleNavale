@@ -142,7 +142,7 @@ int main(void)
             dejaJoue = true;
         }
 
-        if (dejaJoue == false)
+        if (!dejaJoue)
         {
             // Determiner si le tir touche le bateau ou non
             for (int i = 0; i < LONG_BATEAU; i++)
