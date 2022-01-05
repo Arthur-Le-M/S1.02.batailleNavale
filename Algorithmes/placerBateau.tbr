@@ -2,17 +2,17 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>placerBateau</nom>
-  <date_creation>9/12/2021 11:44</date_creation>
+  <date_creation>5/1/2022 09:11</date_creation>
   <Elements>
     <Action>
-      <Position>712;80</Position>
+      <Position>680;80</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>tableau
-longueurBateau
-largeurPlateau
+      <PreAssertion>tableau&#xd;
+longueurBateau&#xd;
+largeurPlateau&#xd;
 longueurPlateau</PreAssertion>
       <PostAssertion>tableau</PostAssertion>
-      <Titre>placerBateau</Titre>
+      <Titre>Procédure placerBateau</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
       <Enfants>
@@ -25,8 +25,8 @@ longueurPlateau</PreAssertion>
             <Action>
               <Position>284;250</Position>
               <StyleLien>2</StyleLien>
-              <PreAssertion>tableau&#xd;&#xd;
-largeurPlateau&#xd;&#xd;
+              <PreAssertion>tableau&#xd;&#xd;&#xd;
+largeurPlateau&#xd;&#xd;&#xd;
 longueurPlateau</PreAssertion>
               <PostAssertion>tableau</PostAssertion>
               <Titre>Initialisation</Titre>
@@ -38,27 +38,27 @@ longueurPlateau</PreAssertion>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
-                  <Titre>Déterminer la coordonnée de base&#xd;
+                  <Titre>Déterminer la coordonnée de base&#xd;&#xd;
 du bateau</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Action>
-                      <Position>-42;764</Position>
+                      <Position>10;518</Position>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>largeurPlateau</PreAssertion>
                       <PostAssertion>coordBateau</PostAssertion>
-                      <Titre>tableau[0].x ← random(0,largeurPlateau-1)</Titre>
+                      <Titre>tableau[0].coordX ← random(0,largeurPlateau-1)</Titre>
                       <DetailsVisible>1</DetailsVisible>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants/>
                     </Action>
                     <Action>
-                      <Position>177;868</Position>
+                      <Position>229;622</Position>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>longueurPlateau</PreAssertion>
                       <PostAssertion>coordBateau</PostAssertion>
-                      <Titre>tableau[0].y ← random(0,longueurPlateau-1)</Titre>
+                      <Titre>tableau[0].coordY ← random(0,hauteurPlateau-1)</Titre>
                       <DetailsVisible>1</DetailsVisible>
                       <DetailsVideVisible>1</DetailsVideVisible>
                       <Enfants/>
@@ -75,7 +75,7 @@ du bateau</Titre>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Action>
-                      <Position>736;511</Position>
+                      <Position>734;489</Position>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>?</PreAssertion>
                       <PostAssertion>sensBateau</PostAssertion>
@@ -87,7 +87,7 @@ du bateau</Titre>
                   </Enfants>
                 </Action>
                 <Action>
-                  <Position>431;409</Position>
+                  <Position>466;409</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>continuer</PostAssertion>
@@ -127,13 +127,13 @@ du bateau</Titre>
                               <estUnique>0</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>talbleau[0].x + longueurBateau &lt; largeurTableau</Titre>
+                                  <Titre>talbleau[0].coordX + longueurBateau &lt; largeurTableau</Titre>
                                   <Enfants>
                                     <Action>
                                       <Position>766;652</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;&#xd;
-largeurPlateau&#xd;&#xd;
+                                      <PreAssertion>table&#xd;&#xd;&#xd;
+largeurPlateau&#xd;&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>tableau</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -145,17 +145,17 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>largeurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].x ← tableau[i-1].x+1</Titre>
+                                          <Titre>tableau[i].coordX ← tableau[i-1].coordX+1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
                                         </Action>
                                         <Action>
-                                          <Position>733;792</Position>
+                                          <Position>700;799</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>longueurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].y ← tableau[i-1].y</Titre>
+                                          <Titre>tableau[i].coordY ← tableau[i-1].coordY</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -180,7 +180,7 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>1216;655</Position>
                                       <StyleLien>1</StyleLien>
-                                      <PreAssertion>i
+                                      <PreAssertion>i&#xd;
 longueurBateau</PreAssertion>
                                       <PostAssertion>i</PostAssertion>
                                       <Titre>i ← longueurBateau</Titre>
@@ -203,13 +203,13 @@ longueurBateau</PreAssertion>
                               <estUnique>0</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>talbleau[0].y + longueurBateau &lt; longueurTableau</Titre>
+                                  <Titre>talbleau[0].coordY + longueurBateau &lt; hauteurTableau</Titre>
                                   <Enfants>
                                     <Action>
                                       <Position>1146;1063</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;&#xd;
-largeurPlateau&#xd;&#xd;
+                                      <PreAssertion>table&#xd;&#xd;&#xd;
+largeurPlateau&#xd;&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>tableau</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -221,7 +221,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>largeurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].x ← tableau[i-1].x</Titre>
+                                          <Titre>tableau[i].coordX ← tableau[i-1].coordX</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -231,7 +231,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>longueurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].y ← tableau[i-1].y+1</Titre>
+                                          <Titre>tableau[i].coordY ← tableau[i-1].coordY+1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -256,7 +256,7 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>1481;1006</Position>
                                       <StyleLien>1</StyleLien>
-                                      <PreAssertion>i
+                                      <PreAssertion>i&#xd;
 longueurBateau</PreAssertion>
                                       <PostAssertion>i</PostAssertion>
                                       <Titre>i ← longueurBateau</Titre>
@@ -279,13 +279,13 @@ longueurBateau</PreAssertion>
                               <estUnique>0</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>talbleau[0].y + longueurBateau &lt; longueurTableau ET talbleau[0].x + longueurBateau &lt; longueurTableau</Titre>
+                                  <Titre>tableau[0].coordX + longueurBateau &lt; largeurPlateau ET tableau[0].coordY + longueurBateau &lt; hauteurPlateau</Titre>
                                   <Enfants>
                                     <Action>
                                       <Position>1713;1194</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;&#xd;
-largeurPlateau&#xd;&#xd;
+                                      <PreAssertion>table&#xd;&#xd;&#xd;
+largeurPlateau&#xd;&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>tableau</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -297,7 +297,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>largeurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].x ← tableau[i-1].x+1</Titre>
+                                          <Titre>tableau[i].coordX ← tableau[i-1].coordX+1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -307,7 +307,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>longueurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].y ← tableau[i-1].y+1</Titre>
+                                          <Titre>tableau[i].coordY ← tableau[i-1].coordY+1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -332,7 +332,7 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>2000;1123</Position>
                                       <StyleLien>1</StyleLien>
-                                      <PreAssertion>i
+                                      <PreAssertion>i&#xd;
 longueurBateau</PreAssertion>
                                       <PostAssertion>i</PostAssertion>
                                       <Titre>i ← longueurBateau</Titre>
@@ -355,13 +355,13 @@ longueurBateau</PreAssertion>
                               <estUnique>0</estUnique>
                               <operationsLogiques>
                                 <operation>
-                                  <Titre>talbleau[0].y + longueurBateau &lt; longueurTableau ET talbleau[0].x + longueurBateau &lt; longueurTableau</Titre>
+                                  <Titre>tableau[0].coordX - longueurBateau > largeurPlateau ET tableau[0].coordY - longueurBateau > hauteurPlateau</Titre>
                                   <Enfants>
                                     <Action>
                                       <Position>1940;607</Position>
                                       <StyleLien>2</StyleLien>
-                                      <PreAssertion>table&#xd;&#xd;
-largeurPlateau&#xd;&#xd;
+                                      <PreAssertion>table&#xd;&#xd;&#xd;
+largeurPlateau&#xd;&#xd;&#xd;
 longueurPlateau</PreAssertion>
                                       <PostAssertion>tableau</PostAssertion>
                                       <Titre>Déterminer les coordonnée de la suite du bateau </Titre>
@@ -373,7 +373,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>largeurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].x ← tableau[i-1].x-1</Titre>
+                                          <Titre>tableau[i].coordX ← tableau[i-1].coordX-1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -383,7 +383,7 @@ longueurPlateau</PreAssertion>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>longueurPlateau</PreAssertion>
                                           <PostAssertion>tableau</PostAssertion>
-                                          <Titre>tableau[i].y ← tableau[i-1].y-1</Titre>
+                                          <Titre>tableau[i].coordY ← tableau[i-1].coordY-1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>1</DetailsVideVisible>
                                           <Enfants/>
@@ -408,7 +408,7 @@ longueurPlateau</PreAssertion>
                                     <Action>
                                       <Position>2410;609</Position>
                                       <StyleLien>1</StyleLien>
-                                      <PreAssertion>i
+                                      <PreAssertion>i&#xd;
 longueurBateau</PreAssertion>
                                       <PostAssertion>i</PostAssertion>
                                       <Titre>i ← longueurBateau</Titre>
