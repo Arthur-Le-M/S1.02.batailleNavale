@@ -1,9 +1,21 @@
+/**
+ * @file sousProgrammes.h
+ * @author Matis CHABANAT et Arthur LE MENN 
+ * @brief Nous certifions que ce document (fichier d'en-tête du module) a été réalisé par nous-même.
+ *        Il a été réalisé dans le cadre de la SAE 1.02 Comparaison d'approches algorithmiques, lors 
+ *        du semestre 1 du BUT informatique à Anglet, 2021-2022.
+ * @date 2022-01-05
+ */
+
 #ifndef SOUSPROGRAMMES_H
 #define SOUSPROGRAMMES_H
 
 #include <iostream>
 #include "game-tools.h"
 using namespace std;
+
+
+/******** ENREGISTREMENTS ********/
 
 // Creation de l'enregistrement IndiceCoordonnee qui représente l'indice d'une coordonnée dans le tableau 2 dimensions.
 struct IndiceCoordonnee
@@ -18,6 +30,9 @@ struct Coordonnee
     char coordX;
     char coordY;
 };
+
+
+/******** SOUS-PROGRAMMES ********/
 
 void afficherRegles();
 // BUT : Afficher les règles du jeu

@@ -1,7 +1,16 @@
+/**
+ * @file main.cpp
+ * @author Matis CHABANAT et Arthur LE MENN 
+ * @brief Nous certifions que ce document (programme principal) a été réalisé par nous-même.
+ *        Il a été réalisé dans le cadre de la SAE 1.02 Comparaison d'approches algorithmiques, 
+ *        lors du semestre 1 du BUT informatique à Anglet, 2021-2022.
+ * @date 2022-01-05
+ */
+
 /*
  Programme : Bataille Navale
- But :  Realiser une partie du jeu de société "Bataille Navale"
- Date de dernière modification : 
+ But :  Realiser une partie du jeu de société "Bataille Navale" (simplifié)
+ Date de dernière modification : 05/01/22
  Auteur : Chabanat Matis, Le Menn Arthur | TD1 - TP1
  Remarques : 
 */
