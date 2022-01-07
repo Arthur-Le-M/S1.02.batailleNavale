@@ -2,7 +2,7 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>afficherGrille</nom>
-  <date_creation>5/1/2022 08:56</date_creation>
+  <date_creation>5/1/2022 09:44</date_creation>
   <Elements>
     <Action>
       <Position>450;120</Position>
@@ -25,7 +25,7 @@
             <Iteration>
               <Position>656.5;349.5</Position>
               <StyleLien>1</StyleLien>
-              <Titre>pour i allant de 0 à 
+              <Titre>pour i allant de 0 à &#xd;
 (nbLigne - 1)</Titre>
               <IterationFixe>1</IterationFixe>
               <Enfants>
@@ -53,7 +53,7 @@
                 <Iteration>
                   <Position>682.5;446.5</Position>
                   <StyleLien>1</StyleLien>
-                  <Titre>pour j allant de 0 à 
+                  <Titre>pour j allant de 0 à &#xd;
 (nbColonne - 1)</Titre>
                   <IterationFixe>1</IterationFixe>
                   <Enfants>
@@ -71,7 +71,7 @@
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
-                          <Titre>Afficher le tableau à l'indice 
+                          <Titre>Afficher le tableau à l'indice &#xd;
 tableau[i][j]</Titre>
                           <DetailsVisible>1</DetailsVisible>
                           <DetailsVideVisible>0</DetailsVideVisible>
