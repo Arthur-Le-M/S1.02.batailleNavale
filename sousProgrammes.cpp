@@ -18,7 +18,7 @@ void afficherRegles()
     cout << endl;
 }
 
-void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColonne)
+void afficherGrille(char tableau[NB_LIGNES][NB_COLONNES], unsigned int nbLigne, unsigned int nbColonne)
 {
     // Declaration des indices des boucles
     unsigned int i;

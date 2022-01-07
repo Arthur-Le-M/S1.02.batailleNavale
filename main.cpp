@@ -23,9 +23,6 @@ using namespace std;
 int main(void)
 {
     /************************************* VARIABLES *************************************/
-    // Créer la grille/le plateau de jeu
-    const unsigned short int NB_LIGNES = 9;
-    const unsigned short int NB_COLONNES = 9;
     char plateau[NB_LIGNES][NB_COLONNES] = {
         ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
         ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
@@ -35,7 +32,7 @@ int main(void)
         ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
         ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
         ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-        ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+        ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}; // Représente le plateau de jeu de la bataille navale
 
     // Compteurs
     unsigned short int nbTouches; // Nombre de tirs qui ont touché le bateau

@@ -15,6 +15,12 @@
 using namespace std;
 
 
+
+/******** DECLARATION DE VARIABLES GLOBALES ********/
+const unsigned short int NB_LIGNES = 9; // Représente le nombre de lignes du plateau de jeu pour la bataille navale
+const unsigned short int NB_COLONNES = 9; // Représente le nombre de colonnes du plateau de jeu pour la bataille navale
+
+
 /******** ENREGISTREMENTS ********/
 
 // Creation de l'enregistrement IndiceCoordonnee qui représente l'indice d'une coordonnée dans le tableau 2 dimensions.
@@ -37,8 +43,8 @@ struct Coordonnee
 void afficherRegles();
 // BUT : Afficher les règles du jeu
 
-void afficherGrille(char tableau[][9], unsigned int nbLigne, unsigned int nbColonne);
-// BUT : Afficher la grille du jeu avec la bataille navale
+void afficherGrille(char tableau[NB_LIGNES][NB_COLONNES], unsigned int nbLigne, unsigned int nbColonne);
+// BUT : Afficher une grille de jeu (c'est à dire un tableau bidimensionnel) 
 
 void placerBateau(IndiceCoordonnee tableau[], unsigned short int longueurBateau, unsigned short int largeurPlateau, unsigned short int hauteurPlateau);
 // BUT : Déterminer les coordonnées du bateau sur un plateau de largeurPlateau par hauteurPlateau
